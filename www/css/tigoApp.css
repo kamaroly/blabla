@@ -1,0 +1,177 @@
+/* Empty. Add your own CSS if you like */
+
+body {
+  cursor: url('http://ionicframework.com/img/finger.png');
+
+}
+
+.star>.item-content {
+  background-color: #EEE8D6 !important;
+}
+
+.splash {
+  background: url(../img/skyline.jpg) no-repeat center center fixed;
+  -webkit-background-size: cover;
+  -moz-background-size: cover;
+  -o-background-size: cover;
+  background-size: cover;
+}
+
+.branding {
+  width: 50%;
+  max-width: 300px;
+  margin: 0 auto;
+  margin-top: 20px;
+  text-align: center;
+}
+
+.tagline {
+  font-size: 1.4rem;
+}
+
+.branding p {
+  margin-top: 10px;
+  font-size: 1rem;
+}
+
+.item-divider {
+  background-color: #EEE8D6;
+}
+
+.bar-positive, .tabs-positive>.tabs,.tabs-striped.tabs-positive .tabs {
+  background-color: #2D3E58 !important;
+  border-color:  #2D3E58;
+}
+
+.item-thumbnail-left img {
+  border-radius: 10px;
+}
+
+.item h3 {
+  font-size: 1.2rem;
+  font-weight: bold;
+  color: #2D3E58;
+}
+
+.dayhighlight {
+  background-color: #9EC6DE;
+  border-top: 20px solid #2D3E58;
+}
+
+.dayhighlight h2 {
+  color: #2D3E58;
+  font-size: 2rem;
+  font-weight: 200;
+}
+.home_search{
+  margin-top: 30px;
+  height: 48px;
+}
+
+.bar.item-input-inset .item-input-wrapper input {
+  width: 100%;
+  height: 48px;
+  color: #2D3E58;
+  font-size: 20px;
+  background: transparent;
+}
+.placeholder-icon {
+  color: #fff;
+  font-size: 18px;
+}
+.item-input-wrapper {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -moz-box;
+  display: -moz-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-flex: 1;
+  -webkit-flex: 1 0;
+  -moz-box-flex: 1;
+  -moz-flex: 1 0;
+  -ms-flex: 1 0;
+  flex: 1 0;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  -webkit-align-items: center;
+  -moz-align-items: center;
+  align-items: center;
+  -webkit-border-radius: 4px;
+   border-radius: 0px; 
+   padding-right: 0px; 
+   padding-left: 0px; 
+   background: #fff; 
+}
+.button.button-positive{
+  background-color: #2D3E58 !important;
+}
+.home-search-button{
+background-color: #2D3E58 !important;
+color: #fff;
+font-weight: 400;
+}
+
+/** START OF THE LOGIN PAGE */
+.welcome-register-message{
+  margin-top: 2em;
+  text-align: center;
+  font-size: 1.5em;
+  line-height: 1.8em;
+}
+.loginPage button{
+  margin-top: 10%;
+  background-color: #2D3E58 !important;
+  color: #fff;
+  font-weight: 4000;
+}
+.loginPage button:focus, .loginPage button:hover{
+  color: #eaeaea;
+}
+.loginPage input{
+  border-radius: 25%;
+  font-size: 20px;
+}
+.loginPhone{
+   width: 100%;
+  height: 48px;
+  color: #2D3E58;
+  font-size: 48px;
+  background: transparent;
+}
+
+.list .my-item.item {
+  left: 0;
+  right: 0;
+}
+.left-image{
+  radius : 3%;
+}
+
+/** Styling for the username field **/
+label.item.has-error {  
+  border-bottom: 2px solid red;
+}
+
+/** Styling for the password field when an error exists**/
+label.item.has-error-lr {  
+  border-left: 2px solid red;
+  border-right: 2px solid red;
+
+}
+
+/** Styling for the password field when an error has been resolved**/
+label.item.valid-lr {  
+  border-left: 2px solid green;
+  border-right: 2px solid green;
+  border-bottom: 2px solid green;
+}
+
+/** Styling for the error text and container **/
+.form-errors {
+  margin: 5px 0
+}
+.form-error {
+  padding: 2px 0 2px 16px;
+  color: red;
+}
