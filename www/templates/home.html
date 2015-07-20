@@ -1,4 +1,4 @@
-<ion-view view-title="Welcome to RwandaApp">
+<ion-view view-title="MobiApp">
 <ion-content class="padding padding-top">
  	
     <div class="branding">
@@ -6,13 +6,23 @@
        <!-- <div class="tagline">Coming soon</div> -->
       <p>Over 500 services available in one place.</p>
     </div>
+
+
 <div class="bar bar-header  item-input-inset home_search">
   <label class="item-input-wrapper">
-    <input type="search" placeholder="Search">
-     <button  href="#/tab/lists" class="button button-dark home-search-button icon ion-ios-search placeholder-icon">
-     </button>
-  </label>
+    <input 
+        type="search" 
+        placeholder="Search"
+        ng-model = "seachKey"
+        >
+    </label>
+
+     <button class="button button-dark home-search-button icon ion-ios-search placeholder-icon" 
+     ng-click="search(seachKey)">
+    </button>
+
   </div>
+
   
  <div class="row">
   <a  href="#/tab/products" class="col home-box">

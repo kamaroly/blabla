@@ -1,6 +1,38 @@
-<ion-view title="{{pet.id}}">
-  <ion-content class="padding">
-    {{pet.id}}
-    {{pet.firstName}}
+<ion-view title="{{ windowTitle}}">
+  <ion-content class="has-subheader">
+   <div class="list card">
+
+  <div class="item item-avatar">
+    <img src="http://placehold.it/40x40">
+    <h2>Company name</h2>
+    <p>company details</p>
+  </div>
+
+  <div class="item item-body">
+    <img class="full-image" src="http://placehold.it/100x50">
+    <p>
+      This is the description of this product, it means that the product description will be here
+      then based on the nature of the product it will display below options.
+    </p>
+    
+  </div>
+
+  <div class="item tabs tabs-secondary tabs-icon-left">
+    <a class="tab-item" ng-click="buyMe()">
+      <i class="icon ion-bag"></i>
+      Buy me
+    </a>
+    <a class="tab-item" href="#">
+      <i class="icon ion-ios-list-outline"></i>
+      Contact company
+    </a>
+    <a class="tab-item" href="#">
+      <i class="icon ion-share"></i>
+      Share
+    </a>
+  </div>
+  </div>
+
+  
   </ion-content>
 </ion-view>

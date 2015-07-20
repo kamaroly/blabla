@@ -1,4 +1,4 @@
-tigoApp.service('AuthService', function ($q,$http,USER_ROLES) {
+tigoApp.service('AuthService', function ($q,$http,$state,$ionicPopup,helperService,USER_ROLES,SERVER_CONSTANTS) {
   var LOCAL_TOKEN_KEY   = 'YourTokenKey';
   var msisdn  = '';
   var isAuthenitcated  = false;
@@ -13,26 +13,14 @@ tigoApp.service('AuthService', function ($q,$http,USER_ROLES) {
   };
 
   var isLoggedIn = function(){
-    return window.localStorage.getItem(LOCAL_TOKEN_KEY);
+    return window.localStorage.getItem('authenticated')=='true';
   };
   //Store our Token in the local store
-  function storeUserCredentials(token){
+  function storeUserCredentials(key,value){
 
-     window.localStorage.setItem(LOCAL_TOKEN_KEY,token);
-     console.log(token);
-     useCredentials(token);
-  };
-  // Use the user credentials
-  function useCredentials(token){
-    msisdn = token.split('.')[0];
-
-    authToken = token;
-
-    if(msisdn =='722123127'){
-      role = USER_ROLES.admin;
-    }
-
-    $http.defaults.headers.common['X-Auth-token'] = token;
+     window.localStorage.setItem(key,value);
+     console.log(key,value);
+     // useCredentials(token);
   };
   
   // LOG OUT USER
@@ -51,30 +39,75 @@ tigoApp.service('AuthService', function ($q,$http,USER_ROLES) {
     destroyUserCredentials();
   };
 
-  var isAuthorized = function(authorizedRoles){
-      // check if it's a valid array
-      if(!angular.isArray(authorizedRoles)){
-        authorizedRoles = [authorizedRoles];
-      }
-      return (isAuthenitcated && authorizedRoles.indexOf(role) !== -1);
-  };
   var login = function(msisdn){
-      if(msisdn == 722123127) {
-        storeUserCredentials(msisdn +'.yourServerToken');
-        return true
-      }else{
-        return false;
-    }
+        // Try to get some token
+        serverAuthentication('250'+msisdn);
+                
+  };
+
+  var serverAuthentication = function(msisdn){
+      storeUserCredentials(LOCAL_TOKEN_KEY,msisdn+'balbalsdfljsfasfalsjdfljsatoken');
+      storeUserCredentials('msisdn',msisdn);
+        // Try to send the code
+      $state.go('code-verification');   
+
+      return ;
+    // Attempt to auntenticate
+    $http.get(SERVER_CONSTANTS.host+SERVER_CONSTANTS.authMsisdnUrl+msisdn)
+    .success(function(token){
+      // Store the tocken and msisdn
+      storeUserCredentials(LOCAL_TOKEN_KEY,token);
+      storeUserCredentials('msisdn',msisdn);
+       
+      // Try to send the code
+      $state.go('code-verification');    
+
+
+    }).error(function(error){
+      console.log(error);
+
+    });
+       return false;
+  };
+
+  // Verify the provided token
+  var verifyCode = function(code){
+    var msisdn = window.localStorage.getItem('msisdn');
+
+        storeUserCredentials('authenticated',true);
+        $state.go('tabs.home');
+return ;
+    $http.get(SERVER_CONSTANTS.host+SERVER_CONSTANTS.authCodeUrl+msisdn+'/'+code)
+    .success(function(response){
+      // if response == 1 then code is valid
+      if(response == '1' ){
+        storeUserCredentials('authenticated',true);
+        $state.go('tabs.home');
+
+        return true;
+      }
+        var alertPopup = $ionicPopup.alert({
+           title: 'You provided invalid code. Please check your sms and provide valid code',
+           // template: 'Please provide your phone number before continue.'
+         });
+        
+        alertPopup.then(function(res) {
+             console.log('Invalid code');
+       });        
+      })
+    .error(function(error){
+      console.log(error);
+    });
   };
 
   return {
     login:login,
     isLoggedIn : isLoggedIn,
+    verifyCode:verifyCode,
     logout: logout,
-    isAuthorized: isAuthorized,
     isAuthenitcated : function(){return isAuthenitcated;},
     msisdn : function(){return msisdn;},
-    role : function(){return role;}
+
   }
 });
 

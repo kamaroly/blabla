@@ -17,22 +17,6 @@ $ionicConfigProvider.tabs.position('bottom');
         }
       }
     })
-    .state('tabs.facts', {
-      url: "/facts",
-      views: {
-        'home-tab': {
-          templateUrl: "templates/facts.html"
-        }
-      }
-    })
-    .state('tabs.facts2', {
-      url: "/facts2",
-      views: {
-        'home-tab': {
-          templateUrl: "templates/facts2.html"
-        }
-      }
-    })
     .state('tabs.about', {
       url: "/about",
       views: {
@@ -65,19 +49,19 @@ $ionicConfigProvider.tabs.position('bottom');
         }
       }
     })
-    .state('tabs.lists',{
-      url: "/lists",
+    .state('tabs.services',{
+      url: "/services/:keyword",
       views:{
         'services-tab':{
-          controller : 'ListController',
-          templateUrl: "templates/list.html"
+          controller : 'SearchCtrl',
+          templateUrl: "templates/services.html"
         }
       }
     })
-    .state('tabs.detail', {
-    url: "/detail/:petsId",
+    .state('tabs.details', {
+    url: "/detail/:item",
     views: {
-      'main': {
+      'services-tab': {
         controller:'DetailCtrl',
         templateUrl: "templates/detail.html"
       }
@@ -87,7 +71,12 @@ $ionicConfigProvider.tabs.position('bottom');
       url: '/sign-in',
       templateUrl: 'templates/sign-in.html',
       controller: 'LoginCtrl'
+    })
+    .state('code-verification',{
+      url:'/code-verification',
+      templateUrl:'templates/code-verification.html',
+      controller:'VerifyCode'
     });
-
+    
     $urlRouterProvider.otherwise('/sign-in');
 });

@@ -1,12 +1,10 @@
 // Registration and Signin Controller
-tigoApp.controller('LoginCtrl', function($scope, $state,$ionicPopup,AuthService) {
+tigoApp.controller('LoginCtrl', function($scope, $state,$ionicPopup,AuthService,helperService) {
   
   // First check if this user is already authenticated
   if(AuthService.isLoggedIn()){
     $state.go('tabs.home');
   }
-  // Let's try to set focus
-  focus('msisdn');
 
   // if we reach here then the user didn't login before, let's continue with verification
   $scope.login = function(user) {
@@ -40,18 +38,30 @@ tigoApp.controller('LoginCtrl', function($scope, $state,$ionicPopup,AuthService)
       return false;
      }     
      // if we reach here it means that the user was successfully authenticated
-     $state.go('tabs.home');    
+     $state.go('code-verification');    
   };  
 });
 
-// Home controller
-tigoApp.controller('HomeTabCtrl', function($scope,$state,AuthService) {
+tigoApp.controller('VerifyCode', function($scope, $state,$ionicPopup,AuthService) {
+  
+  $scope.verifyCode = function(user){
+    AuthService.verifyCode(user.code);
+  }
 
-  // First check if this user has already been authenticated
-  console.log('We are in home now');
 });
 
-tigoApp.controller('ListController', function($scope, ProductService, $ionicScrollDelegate, $ionicHistory) {
+// Home controller
+tigoApp.controller('HomeTabCtrl', function($scope,$state) {
+    console.log('In home controller');
+
+    $scope.search = function(key){
+      console.log('searching for '+key);
+      $scope.windowTitle = key;
+      $state.go('tabs.services',{'keyword':key});
+     };
+});
+
+tigoApp.controller('SearchCtrl', function($scope,$state, ProductService, $ionicScrollDelegate, $ionicHistory,$stateParams) {
 
   $scope.$on('$ionicView.afterLeave', function(){
     $ionicHistory.clearCache();
@@ -66,26 +76,55 @@ tigoApp.controller('ListController', function($scope, ProductService, $ionicScro
     $ionicHistory.clearCache();
   });
 
-  $scope.products = ProductService.all();
+  console.log('You are in the search controller');
+ 
+ // Set the window title
+ $scope.windowTitle = 'Results for : '+$stateParams.keyword;
 
-  $scope.scrollBottom = function() {
-    $ionicScrollDelegate.scrollBottom(true);
-  };
-})
- .controller('DetailCtrl', function($scope, $stateParams, ProductService) {
+ // Define what happens when someone wants to see more details of the service
+ $scope.details = function(item){
 
-  $scope.product = ProductService.get($stateParams.petsId);
+   console.log('Want to see the details of the '+item);
 
+   $state.go('tabs.details',{'item':item});
+ };
+ 
+});
+ 
+ // Detail controller
+tigoApp.controller('DetailCtrl', function($scope, $ionicScrollDelegate, $ionicHistory,$stateParams,$ionicModal,helperService) {
+  $scope.$on('$ionicView.afterLeave', function(){
+    $ionicHistory.clearCache();
+  });
+  $scope.$on('$ionicView.beforeEnter', function(){
+    //$ionicHistory.clearCache();
+  });
+  $scope.$on('$ionicView.beforeLeave', function(){
+    $ionicHistory.clearCache();
+  });
+  $scope.$on('$ionicView.afterEnter', function(){
+    $ionicHistory.clearCache();
+  });
+  console.log('you are in details controller for the item :'+$stateParams.item);
+
+  $scope.windowTitle = 'Details for '+$stateParams.item;
+
+  $scope.buyMe = function(){
+    console.log('You are buying...');
+
+    $scope.item = {'amount' : helperService.getRandomInt(1000,100000)};
+    $scope.user    = {'msisdn' : window.localStorage.getItem('msisdn')};
+
+    $ionicModal.fromTemplateUrl('templates/modal.html', {
+    scope: $scope
+    }).then(function(modal) {
+    $scope.modal = modal;
+     $scope.modal.show();
+    },function(error){
+      console.log(error);
+    });
+  }
 });
 
 
-tigoApp.controller("ExampleController", function($scope) {
- 
-    $scope.images = [];
- 
-    $scope.loadImages = function() {
-        for(var i = 0; i < 100; i++) {
-            $scope.images.push({id: i, src: "http://placehold.it/50x50"});
-        }
-    } 
-});
+

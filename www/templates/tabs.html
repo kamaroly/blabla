@@ -2,18 +2,25 @@
       <ion-nav-back-button>
       </ion-nav-back-button>
     </ion-nav-bar>
-<ion-tabs class="tabs-icon-top tabs-positive">
 
-  <ion-tab title="Home" icon="ion-home" href="#/tab/home">
+<ion-tabs class="tabs-icon-top tabs-positive">
+  <ion-tab icon="ion-navicon-round" href="#/tab/home">
     <ion-nav-view name="home-tab"></ion-nav-view>
   </ion-tab>
-
-  <ion-tab title="About" icon="ion-ios-information" href="#/tab/about">
+  <ion-tab title="Services" icon="ion-pricetags" href="#/tab/services/">
     <ion-nav-view name="services-tab"></ion-nav-view>
   </ion-tab>
 
+  <ion-tab title="Favs" icon="ion-ios-star-outline" href="#/tab/about">
+    <ion-nav-view name="favs-tab"></ion-nav-view>
+  </ion-tab>
+   <ion-tab title="Categories" icon="ion-ios-bookmarks-outline" href="#/tab/about">
+    <ion-nav-view name="categories-tab"></ion-nav-view>
+  </ion-tab>
+
+
   <ion-tab title="Account"  icon="ion-gear-a" ui-sref="tabs.contact">
-    <ion-nav-view name="contact-tab"></ion-nav-view>
+    <ion-nav-view name="account-tab"></ion-nav-view>
   </ion-tab>
 
 </ion-tabs>

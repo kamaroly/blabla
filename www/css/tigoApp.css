@@ -166,7 +166,21 @@ label.item.valid-lr {
   border-right: 2px solid green;
   border-bottom: 2px solid green;
 }
+.bar.item-input-inset .item-input-wrapper input {
+    width: 100%;
+}
 
+.search-wrapper-light {
+    border-bottom: 2px solid rgba(255,255,255,0.5);
+    background: none;
+    border-radius: 0;
+    margin-left: 5px;
+    margin-right: 5px;
+}
+
+.search-wrapper-light input, .search-wrapper-light input::-webkit-input-placeholder {
+    color: #ffffff;
+}
 /** Styling for the error text and container **/
 .form-errors {
   margin: 5px 0
@@ -175,3 +189,17 @@ label.item.valid-lr {
   padding: 2px 0 2px 16px;
   color: red;
 }
+
+.item-thumbnail-left, .item-thumbnail-left .item-content{
+  padding-left: 106px;
+  max-height: 80px;
+  }
+.item-thumbnail-left, .item-thumbnail-left .item-content{
+  min-height: 70px;
+}
+.item-thumbnail-left > img:first-child, .item-thumbnail-left .item-image, .item-thumbnail-left .item-content > img:first-child, .item-thumbnail-left .item-content .item-image{
+   top:0;
+}
+.item-thumbnail-left img {
+   border-radius: 1px; 
+  }

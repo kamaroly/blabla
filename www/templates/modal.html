@@ -1,0 +1,23 @@
+<ion-modal-view>
+<ion-header-bar class="bar bar-header bar-positive">
+  <h1 class="title">You are buying this services</h1>
+  <button class="button button-clear button-primary" ng-click="modal.hide()">Cancel</button>
+</ion-header-bar>
+<ion-content class="padding">
+  <div class="list">
+    <label class="item item-input  ">
+      <span class="input-label">Your phone number</span>
+      <input ng-model="user.msisdn" type="text" disabled="disabled" value ="{{ user.msisdn }}">
+    </label>
+    <label class="item item-input ">
+      <span class="input-label">Amount in RWF</span>
+      <input ng-model="item.amount" type="text"  disabled="disabled" value ="{{item.amount}}">
+    </label>
+    <label class="item item-input ">
+      <span class="input-label">Enter your pin to confirm</span>
+      <input ng-model="user.pin" type="text">
+    </label>
+    <button class="button button-full button-positive" ng-click="pay(newUser)">Buy</button>
+  </div>
+</ion-content>
+</ion-modal-view>
