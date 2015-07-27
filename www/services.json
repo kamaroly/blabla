@@ -1,9 +1,84 @@
- [
-    {id: 0, name: "Brian Leroux", pic: "brian_leroux.jpg", title: "Developer", bio: "Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat."},
-    {id: 1, name: "Christophe Coenraets", pic: "christophe.jpg", title: "Developer", bio: "Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat."},
-    {id: 2, name: "Brett Rudd", pic: "brett.jpg", title: "Developer", bio: "Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat."},
-    {id: 3, name: "Joe Bowser", pic: "joe_bowser.jpg", title: "Developer", bio: "Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat."},
-    {id: 4, name: "Michael Brooks", pic: "mwbrooks.jpeg", title: "Developer", bio: "Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat."},
-    {id: 5, name: "Jason Weathersby", pic: "jasonweathersby.jpeg", title: "Developer", bio: "Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat."},
-    {id: 6, name: "Holly Schinsky", pic: "holly.jpg", title: "Developer", bio: "Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat."}
- ];
+{
+"services": [
+    {
+      "id"  : "1",
+      "name": "Tigo cash",
+      "logo": "http://virtaxchange.virtacoinmall.com/Tigo.gif",
+      "description": "This is a mobile financing service provided by Tigo rwanda",
+      "slug": "mobile_finance_system",
+      "category_id" : 1,
+      "reknown": "Royal Academy of Painting and Sculpture"
+    },
+    {
+      "id"  : "2",
+      "name": "Social Security",
+      "logo": "img/social_security.png",
+      "description": "The Government established the Rwanda Social Security Board (RSSB) after the merger of Social Security Fund of Rwanda (SSFR) with Rwanda Health Insurance Fund (RAMA).",
+      "slug": "social_security",
+      "category_id" : 3,
+      "tags": ""
+    },
+     {
+      "id"  : "3",
+      "name": "Police",
+      "logo": "img/police.png",
+      "description": "Please contact us at our General Headquarters with the details below. Please use the emergency phone numbers above for emergency purposes. Use the form below to contact us directly.",
+      "slug": "police",
+      "category_id" : 3,
+      "tags": ""
+    },
+    {
+      "id"  : "4",
+      "name": "National ID",
+      "logo": "img/public_services.png",
+      "description": "Rwanda’s National ID Project ",
+      "slug": "national_id",
+      "category_id" : 3,
+      "tags": ""
+    },
+    {
+      "id"  : "5",
+      "name": "Rwanda Revenue Authoriry",
+      "logo": "img/rra.png",
+      "description": "Mobilise revenue for economic development through efficient and equitable services that promote business growth",
+      "slug": "national_id",
+      "category_id" : 3,
+      "tags": ""
+    }, 
+    {
+      "id"  : "6",
+      "name": "Rwanda Development Board",
+      "logo": "img/rdb.png",
+      "description": "Rwanda Development Board (RDB) KN 5 Rd, KG 9 Ave P.O. Box 6239 Kigali, RwandaFax: +250 252 580388 Email:info@rdb.rw",
+      "slug": "rwanda_development_board",
+      "category_id" : 3,
+      "tags": ""
+    },
+    {
+      "id"  : "7",
+      "name": "Safe motos",
+      "logo": "img/safemoto.png",
+      "description": "SafeMotos using Rwanda as “test kitchen” for Africa-wide rollout",
+      "slug": "rwanda_development_board",
+      "category_id" : 4,
+      "tags": ""
+    },{
+      "id"  : "8",
+      "name": "Huguka.com",
+      "logo": "img/huguka.png",
+      "description": "Amasomo asobanutse y'ikoranabuhanga, atunganywa buri munsi.",
+      "slug": "Huguka",
+      "category_id" : 4,
+      "tags": ""
+    }  ,  {
+      "id"  : "9",
+      "name": "Vuga packs",
+      "logo": "img/tigo_packs.png",
+      "description": "Voice and sms packs ",
+      "slug": "mobile_finance_system",
+      "category_id" : 1,
+      "reknown": "Royal Academy of Painting and Sculpture"
+    }
+
+  ]
+}

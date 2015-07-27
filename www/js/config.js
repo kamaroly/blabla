@@ -1,4 +1,5 @@
-tigoApp.config(function($stateProvider, $urlRouterProvider,$ionicConfigProvider) {
+tigoApp.config(function($stateProvider, $urlRouterProvider,$ionicConfigProvider,$ionicFilterBarConfigProvider) {
+  $ionicFilterBarConfigProvider.light; 
 // Start by providing configuratiosn 
 $ionicConfigProvider.tabs.position('bottom');
 
@@ -17,11 +18,12 @@ $ionicConfigProvider.tabs.position('bottom');
         }
       }
     })
-    .state('tabs.about', {
-      url: "/about",
+    .state('tabs.categories', {
+      url: "/categories",
       views: {
-        'about-tab': {
-          templateUrl: "templates/about.html"
+        'categories-tab': {
+          templateUrl: "templates/categories.html",
+          controller : 'categoryCtrl'
         }
       }
     })
@@ -79,4 +81,12 @@ $ionicConfigProvider.tabs.position('bottom');
     });
     
     $urlRouterProvider.otherwise('/sign-in');
-});
+})
+.run(function ($window, $ionicPlatform) {
+    $ionicPlatform.ready(function () {
+      if ($window.cordova && $window.cordova.plugins.Keyboard) {
+        $window.cordova.plugins.Keyboard.hideKeyboardAccessoryBar(true);
+        $window.cordova.plugins.Keyboard.disableScroll(true);
+      }
+    });
+  });

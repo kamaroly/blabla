@@ -1,55 +1,15 @@
 <ion-view title="{{ windowTitle }}">
-
+  <ion-nav-buttons side="secondary">
+    <button class="button button-icon icon ion-ios-search-strong" ng-click="showFilterBar()">
+    </button>
+  </ion-nav-buttons>
 <ion-content class="has-subheade">
 <div class="list">
-
-        <a class="item item-thumbnail-left" ng-click="details(1)">
-          <img src="http://ionicframework.com/img/docs/blue-album.jpg">
-          <h2>Weezer</h2>
-          <p>Blue Album</p>
+      <a class="item item-thumbnail-left" ng-click="details(service.id)" ng-repeat="service in services">
+          <img ng-src="{{ service.logo }}">
+          <h2>{{ service.name }}</h2>
+          <p> {{service.description}}</p>
         </a>
-
-        <a class="item item-thumbnail-left" ng-click="details(1)" >
-          <img src="http://ionicframework.com/img/docs/siamese-dream.jpg">
-          <h2>Smashing Pumpkins</h2>
-          <p>Siamese Dream</p>
-        </a>
-
-        <a class="item item-thumbnail-left" ng-click="details(1)">
-          <img src="http://ionicframework.com/img/docs/nevermind.jpg">
-          <h2>Nirvana</h2>
-          <p>Nevermind</p>
-        </a>
-
-        <a class="item item-thumbnail-left" ng-click="details(1)">
-          <img src="http://ionicframework.com/img/docs/license-to-ill.jpg">
-          <h2>Beastie Boys</h2>
-          <p>License To Ill</p>
-        </a>
-
-        <a class="item item-thumbnail-left" ng-click="details(1)">
-          <img src="http://ionicframework.com/img/docs/dookie.jpg">
-          <h2>Green Day</h2>
-          <p>Dookie</p>
-        </a>
-
-        <a class="item item-thumbnail-left" ng-click="details(1)">
-          <img src="http://ionicframework.com/img/docs/dookie.jpg">
-          <h2>Green Day</h2>
-          <p>Dookie</p>
-        </a>
-        <a class="item item-thumbnail-left" ng-click="details(1)">
-          <img src="http://ionicframework.com/img/docs/siamese-dream.jpg">
-          <h2>Smashing Pumpkins</h2>
-          <p>Siamese Dream</p>
-        </a>
-
-        <a class="item item-thumbnail-left" ng-click="details(1)">
-          <img src="http://ionicframework.com/img/docs/nevermind.jpg">
-          <h2>Nirvana</h2>
-          <p>Nevermind</p>
-        </a>
-
 </div>
 </ion-content>
 </ion-view>

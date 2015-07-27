@@ -4,7 +4,7 @@
     </ion-nav-bar>
 
 <ion-tabs class="tabs-icon-top tabs-positive">
-  <ion-tab icon="ion-navicon-round" href="#/tab/home">
+  <ion-tab icon="ion-navicon-round" ng-click="toggleLeft()">
     <ion-nav-view name="home-tab"></ion-nav-view>
   </ion-tab>
   <ion-tab title="Services" icon="ion-pricetags" href="#/tab/services/">
@@ -14,7 +14,7 @@
   <ion-tab title="Favs" icon="ion-ios-star-outline" href="#/tab/about">
     <ion-nav-view name="favs-tab"></ion-nav-view>
   </ion-tab>
-   <ion-tab title="Categories" icon="ion-ios-bookmarks-outline" href="#/tab/about">
+   <ion-tab title="Categories" icon="ion-ios-bookmarks-outline" href="#/tab/categories">
     <ion-nav-view name="categories-tab"></ion-nav-view>
   </ion-tab>
 

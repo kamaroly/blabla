@@ -1,7 +1,7 @@
 <ion-modal-view>
 <ion-header-bar class="bar bar-header bar-positive">
-  <h1 class="title">You are buying this services</h1>
-  <button class="button button-clear button-primary" ng-click="modal.hide()">Cancel</button>
+  <h1 class="title">Fill below to buy</h1>
+  <button class="button button-icon icon ion-ios-close button-assertive" ng-click="modal.hide()"></button>
 </ion-header-bar>
 <ion-content class="padding">
   <div class="list">
@@ -17,7 +17,7 @@
       <span class="input-label">Enter your pin to confirm</span>
       <input ng-model="user.pin" type="text">
     </label>
-    <button class="button button-full button-positive" ng-click="pay(newUser)">Buy</button>
+    <button class="button button-full icon-left ion-bag button-balanced" ng-click="pay(newUser)">Buy</button>
   </div>
 </ion-content>
 </ion-modal-view>

@@ -61,7 +61,7 @@ tigoApp.controller('HomeTabCtrl', function($scope,$state) {
      };
 });
 
-tigoApp.controller('SearchCtrl', function($scope,$state, ProductService, $ionicScrollDelegate, $ionicHistory,$stateParams) {
+tigoApp.controller('SearchCtrl', function($scope,$state,$http, ProductService,$ionicFilterBar,$ionicScrollDelegate, $ionicHistory,$stateParams) {
 
   $scope.$on('$ionicView.afterLeave', function(){
     $ionicHistory.clearCache();
@@ -76,23 +76,110 @@ tigoApp.controller('SearchCtrl', function($scope,$state, ProductService, $ionicS
     $ionicHistory.clearCache();
   });
 
-  console.log('You are in the search controller');
- 
- // Set the window title
- $scope.windowTitle = 'Results for : '+$stateParams.keyword;
+  /**
+   * ---------TESTING BAR SEARCH 
+   */
+  
+    var filterBarInstance;
+
+    function getItems(){
+      $http.get('services.json').success(function(data){
+        $scope.services = data.services;
+     });
+    };
+
+    $scope.showFilterBar = function () {
+        // First refresh data
+         $http.get('services.json').success(function(data){
+        $scope.services = data.services;
+     });
+        filterBarInstance = $ionicFilterBar.show({
+        items: $scope.services,
+        update: function (filteredItems) {
+          $scope.services = filteredItems;
+        }
+      });
+    };
+
+    $scope.refreshItems = function () {
+      
+      getItems();
+      if (filterBarInstance) {
+
+        filterBarInstance();
+        filterBarInstance = null;
+      }
+
+      $timeout(function () {
+        getItems();
+        $scope.$broadcast('scroll.refreshComplete');
+      }, 1000);
+    };
+
+  /**
+   * ----- END OF TESTING 
+   */
+   console.log('You are in the search controller');
+   var  keyword = $stateParams.keyword;
+   
+   $scope.windowTitle = keyword;
+
+   if (keyword == "") {
+     $scope.windowTitle = "Services";
+   };
+     // Refresh services
+     getItems();
+
+    // Search service per category
+     var getServicePerCategory = function(categoryId){
+      
+      $http.get('services.json',{'categoryId':categoryId}).success(function(data) {  
+        var results = [];
+         for (var i = data.services.length - 1; i >= 0; i--) {
+           if(data.services[i].category_id == categoryId){
+            results.push(data.services[i]);
+           }
+         };
+        $scope.services = results;
+      });
+     };
+    
+    // Serach service per category
+     var getCategoryName = function(categoryId){
+      
+      $http.get('categories.json',{'categoryId':categoryId}).success(function(data) {  
+         for (var i = data.categories.length - 1; i >= 0; i--) {
+           if(data.categories[i].id == categoryId){
+              $scope.windowTitle = data.categories[i].name;
+              return data.categories;
+           }
+         };
+        });
+     };
+   // if the user has entered number we assume that 
+   // He is looking for categories
+    if(keyword.match(/^\d+$/)){
+      //valid integer
+      getCategoryName(keyword);
+      $scope.services = getServicePerCategory(keyword);
+    }
+    else if(keyword && keyword.length){
+        
+    }
 
  // Define what happens when someone wants to see more details of the service
  $scope.details = function(item){
 
    console.log('Want to see the details of the '+item);
-
+ 
    $state.go('tabs.details',{'item':item});
  };
  
 });
- 
+
+
  // Detail controller
-tigoApp.controller('DetailCtrl', function($scope, $ionicScrollDelegate, $ionicHistory,$stateParams,$ionicModal,helperService) {
+tigoApp.controller('DetailCtrl', function($scope, $ionicScrollDelegate, $ionicHistory,$stateParams,$ionicModal,helperService,$http) {
   $scope.$on('$ionicView.afterLeave', function(){
     $ionicHistory.clearCache();
   });
@@ -107,7 +194,23 @@ tigoApp.controller('DetailCtrl', function($scope, $ionicScrollDelegate, $ionicHi
   });
   console.log('you are in details controller for the item :'+$stateParams.item);
 
-  $scope.windowTitle = 'Details for '+$stateParams.item;
+  var serviceId = $stateParams.item;
+  
+  // Get the service we are looking for
+  $http.get('services.json',{'serviceId':serviceId}).success(function(data) {  
+        var results = [];
+         for (var i = data.services.length - 1; i >= 0; i--) {
+           if(data.services[i].id == serviceId){
+            
+            $scope.serviceDetails = data.services[i];
+
+            $scope.windowTitle = 'Details for '+data.services[i].name;
+
+            return true;            
+           }
+         };
+      });
+  
 
   $scope.buyMe = function(){
     console.log('You are buying...');
@@ -124,6 +227,87 @@ tigoApp.controller('DetailCtrl', function($scope, $ionicScrollDelegate, $ionicHi
       console.log(error);
     });
   }
+
+  $scope.contact = function(){
+
+    $ionicModal.fromTemplateUrl('templates/contact.html', {
+    scope: $scope
+    }).then(function(modal) {
+    $scope.modal = modal;
+     $scope.modal.show();
+    },function(error){
+      console.log(error);
+    });
+  }
+});
+
+
+/**
+ * CATEGORIES CONTROLLER
+ */
+tigoApp.controller('categoryCtrl', function ($scope,$http,$state,$ionicHistory,$ionicFilterBar) { 
+  $scope.$on('$ionicView.afterLeave', function(){
+    $ionicHistory.clearCache();
+  });
+  $scope.$on('$ionicView.beforeEnter', function(){
+    //$ionicHistory.clearCache();
+  });
+  $scope.$on('$ionicView.beforeLeave', function(){
+    $ionicHistory.clearCache();
+  });
+  $scope.$on('$ionicView.afterEnter', function(){
+    $ionicHistory.clearCache();
+  });
+
+
+    $http.get('categories.json').success(function(data) {  
+      $scope.categories = data.categories;
+    });
+
+    $scope.windowTitle = "Categories";
+    /**
+   * ---------TESTING BAR SEARCH 
+   */
+  var filterBarInstance;
+
+    function getItems(){
+      $http.get('categories.json').success(function(data){
+      $scope.categories = data.categories;
+     });
+    };
+
+    $scope.showFilterBar = function () {
+
+        // First refresh data
+        getItems();
+
+        filterBarInstance = $ionicFilterBar.show({
+        items: $scope.categories,
+        update: function (filteredItems) {
+          $scope.categories = filteredItems;
+        }
+      });
+
+    };
+
+    $scope.refreshItems = function () {
+      if (filterBarInstance) {
+        filterBarInstance();
+        filterBarInstance = null;
+      }
+
+      $timeout(function () {
+        getItems();
+        $scope.$broadcast('scroll.refreshComplete');
+      }, 1000);
+    };
+
+  /**
+   * ----- END OF TESTING 
+   */
+   $scope.details = function(item){
+      $state.go('tabs.services',{'keyword':item});
+    };
 });
 
 
