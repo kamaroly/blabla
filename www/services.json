@@ -184,14 +184,42 @@
       }],
 
       "tags": ""
-    }  ,  {
+    }  , 
+     {
       "id"  : "9",
-      "name": "Vuga packs",
+      "name": "Cyizere",
       "logo": "img/tigo_packs.png",
-      "description": "Voice and sms packs ",
-      "slug": "mobile_finance_system",
+      "description": "On demand vuga pack",
+      "slug": "cyizere",
       "category_id" : 1,
       "type":"airtime",
+      "airtimeProducts":[
+      {
+        "name":"HOW TO GET IT",
+        "value":"Dial *255# or *222*100# "
+      },
+      {
+        "name":"PRICE (RWF) ",
+        "value":"PRICE (RWF) "
+      },
+      {
+        "name":"SECONDS (TIGO - TIGO)",
+        "value":"800"
+      },
+       {
+        "name":"SMS",
+        "value":"13"
+      },
+      {
+        "name":"DATA",
+        "value":"O MB"
+      },
+      {
+        "name":"Validity",
+        "value":"24 Hrs"
+      }
+
+      ],
       "reknown": "Royal Academy of Painting and Sculpture"
     }
 
