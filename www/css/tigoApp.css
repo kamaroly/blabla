@@ -67,14 +67,18 @@
 
 .bar.item-input-inset .item-input-wrapper input {
   width: 100%;
-  height: 48px;
+  height: 44%;
+  padding: 10px;
   color: #2D3E58;
-  font-size: 20px;
+  font-size: 16px;
   background: transparent;
 }
 .placeholder-icon {
-  color: #fff;
+  color: #2D3E58;
   font-size: 18px;
+}
+.placeholder-icon:first-child{
+  padding-left:6px;
 }
 .item-input-wrapper {
   display: -webkit-box;

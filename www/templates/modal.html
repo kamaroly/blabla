@@ -1,5 +1,12 @@
 <ion-modal-view>
-
+<ion-header-bar class="bar bar-header bar-positive">
+  <div ng-switch on="serviceDetails.type">
+  <h1 class="title" ng-switch-when="mfs">Pay with Tigo cash</h1>
+  <h1 class="title" ng-switch-when="online">{{serviceDetails.name}} 's services</h1>
+  <h1 class="title" ng-switch-when="airtime">Pack content</h1>
+</div>
+  <button class="button button-icon icon ion-ios-close button-assertive" ng-click="modal.hide()"></button>
+</ion-header-bar>
 <ion-content class="padding" ng-switch on="serviceDetails.type">
  <div ng-switch-when="mfs">
   <div  ng-include src="'templates/buy_with_mfs.html'"> </div>

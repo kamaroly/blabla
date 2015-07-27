@@ -7,22 +7,15 @@
       <p>Over 500 services available in one place.</p>
     </div>
 
-
-<div class="bar bar-header  item-input-inset home_search">
-  <label class="item-input-wrapper">
-    <input 
-        type="search" 
-        placeholder="Search"
-        ng-model = "seachKey"
-        >
-    </label>
-
-     <button class="button button-dark home-search-button icon ion-ios-search placeholder-icon" 
-     ng-click="search(seachKey)">
-    </button>
-
-  </div>
-
+<form ng-submit="search(searchKey)" class="home_search">
+  <div class="list list-inset">
+  <label class="item item-input">
+    <i class="icon ion-search placeholder-icon"></i>
+    <input type="text" placeholder="Search" 
+        ng-model = "seachKey">
+  </label>
+</div>
+</form>
   
  <div class="row">
   <a href="#/tab/services/3" class="col">

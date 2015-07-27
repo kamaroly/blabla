@@ -1,12 +1,5 @@
-<div class="padding">
-  <ion-header-bar class="bar bar-header bar-positive">
-  <h1 class="title">Fill below to buy</h1>
-  <button class="button button-icon icon ion-ios-close button-assertive" ng-click="modal.hide()"></button>
-</ion-header-bar>
-
-</div>
 <div class="list">
-    <label class="item item-input  ">
+    <label class="item item-input input-select ">
       <span class="input-label">Your phone number</span>
       <input ng-model="user.msisdn" type="text" disabled="disabled" value ="{{ user.msisdn }}">
     </label>
@@ -16,7 +9,7 @@
     </label>
     <label class="item item-input ">
       <span class="input-label">Enter your pin to confirm</span>
-      <input ng-model="user.pin" type="text">
+      <input ng-model="user.pin" type="password" autofocus="autofocus" style="border:1px solid rgba(0,0,0,0.5);font-size:22px;">
     </label>
     <button class="button button-full icon-left ion-bag button-balanced" ng-click="pay(newUser)">Buy</button>
 </div>
