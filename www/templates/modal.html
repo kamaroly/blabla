@@ -3,21 +3,12 @@
   <h1 class="title">Fill below to buy</h1>
   <button class="button button-icon icon ion-ios-close button-assertive" ng-click="modal.hide()"></button>
 </ion-header-bar>
-<ion-content class="padding">
-  <div class="list">
-    <label class="item item-input  ">
-      <span class="input-label">Your phone number</span>
-      <input ng-model="user.msisdn" type="text" disabled="disabled" value ="{{ user.msisdn }}">
-    </label>
-    <label class="item item-input ">
-      <span class="input-label">Amount in RWF</span>
-      <input ng-model="item.amount" type="text"  disabled="disabled" value ="{{item.amount}}">
-    </label>
-    <label class="item item-input ">
-      <span class="input-label">Enter your pin to confirm</span>
-      <input ng-model="user.pin" type="text">
-    </label>
-    <button class="button button-full icon-left ion-bag button-balanced" ng-click="pay(newUser)">Buy</button>
-  </div>
+<ion-content class="padding" ng-switch on="serviceDetails.type">
+ <div ng-switch-when="mfs">
+  <div  ng-include src="'templates/buy_with_mfs.html'"> </div>
+ </div>
+ <div ng-switch-when="online">
+  <div  ng-include src="'templates/access_online_services.html'"> </div>
+ </div>
 </ion-content>
 </ion-modal-view>

@@ -1,0 +1,15 @@
+<div class="list">
+    <label class="item item-input  ">
+      <span class="input-label">Your phone number</span>
+      <input ng-model="user.msisdn" type="text" disabled="disabled" value ="{{ user.msisdn }}">
+    </label>
+    <label class="item item-input ">
+      <span class="input-label">Amount in RWF</span>
+      <input ng-model="item.amount" type="text"  disabled="disabled" value ="{{item.amount}}">
+    </label>
+    <label class="item item-input ">
+      <span class="input-label">Enter your pin to confirm</span>
+      <input ng-model="user.pin" type="text">
+    </label>
+    <button class="button button-full icon-left ion-bag button-balanced" ng-click="pay(newUser)">Buy</button>
+</div>

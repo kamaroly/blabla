@@ -14,9 +14,22 @@
   </div>
 
   <div class="item tabs tabs-secondary tabs-icon-left">
-    <a class="tab-item" ng-click="buyMe()">
-      <i class="icon ion-bag"></i>
-      Buy me
+    <a class="tab-item" ng-click="buyMe()" ng-switch on="serviceDetails.type">
+     <span ng-switch-when="mfs"> 
+      <i class="icon ion-bag" >
+      </i>
+       Purchase
+      </span>
+      <span  ng-switch-when="online">
+      <i class="icon ion-earth">
+      </i>
+      Service links
+      </span>
+    <span ng-switch-when="airtime"> 
+       <i class="icon ion-iphone">
+      </i>
+      Buy
+</span>
     </a>
     <a class="tab-item" ng-click="contact()">
       <i class="icon ion-ios-email"></i>
