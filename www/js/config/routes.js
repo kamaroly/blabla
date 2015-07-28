@@ -12,7 +12,7 @@ $ionicConfigProvider.tabs.position('bottom');
     .state('tabs.home', {
       url: "/home",
       views: {
-        'home-tab': {
+        'services-tab': {
           templateUrl: "templates/home.html",
           controller: 'HomeTabCtrl'
         }
@@ -55,7 +55,7 @@ $ionicConfigProvider.tabs.position('bottom');
       url: "/services/:keyword",
       views:{
         'services-tab':{
-          controller : 'SearchCtrl',
+          controller : 'ServicesCtrl',
           templateUrl: "templates/services.html"
         }
       }

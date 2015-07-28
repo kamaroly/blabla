@@ -22,7 +22,7 @@ tigoApp.service('AuthService', function ($q,$http,$state,$ionicPopup,helperServi
      console.log(key,value);
      // useCredentials(token);
   };
-  
+
   // LOG OUT USER
   function destroyUserCredentials(){
     authToken = undefined;
