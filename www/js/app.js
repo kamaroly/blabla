@@ -1,5 +1,5 @@
 var tigoApp = angular.module('tigoApp', ['ionic','ngCordova','ngMessages','jett.ionic.filter.bar'])
-tigoApp.run(function($ionicPlatform,$rootScope,$ionicSideMenuDelegate,$cordovaSQLite) {
+tigoApp.run(function($ionicPlatform,$rootScope,$ionicSideMenuDelegate,$cordovaSQLite,$cordovaKeyboard) {
     $ionicPlatform.ready(function() {
         if(window.cordova && window.cordova.plugins.Keyboard) {
             cordova.plugins.Keyboard.hideKeyboardAccessoryBar(true);
