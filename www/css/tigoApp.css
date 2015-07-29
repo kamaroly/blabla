@@ -258,3 +258,13 @@ label.item.valid-lr {
 .item-body .full-image{
   max-height: 300px;
 }
+
+*::-webkit-input-placeholder {
+  color: red;
+}
+*:-moz-placeholder {
+  color: red;
+}
+*:-ms-input-placeholder { /* IE10+ */
+  color: red;
+}

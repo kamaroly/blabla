@@ -21,11 +21,18 @@ tigoApp.controller('DetailCtrl', function($scope, $ionicScrollDelegate, $ionicHi
      ServiceRepository.get(serviceId).then(function(service){
         $scope.serviceDetails = service;
 
+        //Get service details
         ServiceLinksRepository.getByService(service.id)
             .then(function(links){
               $scope.serviceLinks = links;
             });
-  
+        
+        // Get service related services 
+        ServiceRepository.getRelated(service.category_id)
+            .then(function(relatedServices){
+              $scope.relatedServices = relatedServices;
+            });
+        
         $scope.windowTitle = service.name;
       });
   };

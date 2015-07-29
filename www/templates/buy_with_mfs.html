@@ -1,15 +1,16 @@
 <div class="list">
-    <label class="item item-input input-select ">
-      <span class="input-label">Your phone number</span>
-      <input ng-model="user.msisdn" type="text" disabled="disabled" value ="{{ user.msisdn }}">
-    </label>
-    <label class="item item-input ">
-      <span class="input-label">Amount in RWF</span>
-      <input ng-model="item.amount" type="text"  disabled="disabled" value ="{{item.amount}}">
-    </label>
-    <label class="item item-input ">
-      <span class="input-label">Enter your pin to confirm</span>
-      <input ng-model="user.pin" type="password" autofocus="autofocus" style="border:1px solid rgba(0,0,0,0.5);font-size:22px;">
-    </label>
+  <label class="item item-input item-stacked-label">
+    <span class="input-label">Your phone</span>
+    <input type="text" placeholder="{{ user.msisdn }}">
+  </label>
+  <label class="item item-input item-stacked-label">
+    <span class="input-label">Amount to pay</span>
+    <input type="text" placeholder="{{item.amount}} Rwf">
+  </label>
+  <label class="item item-input item-stacked-label">
+    <span class="input-label">TIGO CASH PIN</span>
+    <input type="text" ng-model="user.pin" placeholder="****" autofocus="autofocus">
+  </label>
+</div>
     <button class="button button-full icon-left ion-bag button-balanced" ng-click="pay(newUser)">Buy</button>
 </div>
