@@ -30,7 +30,9 @@ tigoApp.factory('ServiceRepository', function($cordovaSQLite, DBA) {
           return DBA.getAll(result);
         });
   }
-  
+  self.search = function(keyword){
+    var parameters = [keyword];
+  }
   self.getRelated = function(categoryId){
     var parameters = [parseInt(categoryId)];
       return DBA.query("SELECT id,name,logo,description,slug,category_id,type FROM services WHERE category_id =(?)  LIMIT 10;",parameters)
