@@ -1,5 +1,5 @@
 // Home controller
-tigoApp.controller('HomeTabCtrl', function($scope,$state,ServiceRepository,ServiceLinksRepository,CategoryRepository) {
+tigoApp.controller('HomeTabCtrl', function($scope,$state,ServiceRepository,ServiceLinksRepository,CategoryRepository,SettingRepository) {
   $scope.services = [];
   $scope.services = null;
 
@@ -12,14 +12,16 @@ tigoApp.controller('HomeTabCtrl', function($scope,$state,ServiceRepository,Servi
           $scope.createNewCategory(category);
         });
 
-       ServicesSeeding.forEach(function(service, index){
-
+         ServicesSeeding.forEach(function(service, index){
          ServiceLInksSeeding.forEach(function(serviceLink){
          serviceLink.service_id = Math.floor(Math.random()*9)+1;
          ServiceLinksRepository.add(serviceLink);
-
          });             
          $scope.createNewService(service);
+      });
+            SettingSeeding.forEach(function(setting,index){
+        console.log(setting);
+        SettingRepository.add(setting);
       });
       };
     });

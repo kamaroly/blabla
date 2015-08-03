@@ -10,6 +10,23 @@ var createSettingsTable = "CREATE TABLE IF NOT EXISTS settings(key varchar(50), 
 var categoriesCount;
 var servicesCount;
 
+var SettingSeeding =[
+    {
+      "key"   : "shop_with_my_number",
+      "value": true,
+    },
+    {
+      "key"   : "enter_is_submit",
+      "value": true,
+    },
+    {
+      "key"   : "use_airtime_to_buy_packs",
+      "value": true,
+    },
+    {
+      "key"   : "always_enter_pin",
+      "value": true,
+    }];
 // Data base seedings
 var CategoriesSeeding= [
     {
