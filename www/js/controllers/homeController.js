@@ -62,9 +62,9 @@ tigoApp.controller('HomeTabCtrl', function($scope,$state,ServiceRepository,Servi
     $scope.updateServices();
   };
 
-  $scope.search = function(key){
-      console.log('searching for '+key);
-      $scope.windowTitle = key;
-      $state.go('tabs.services',{'keyword':key});
+  $scope.search = function(keyword){
+      console.log('searching for '+keyword);
+      $scope.windowTitle = keyword;
+      $state.go('tabs.services',{'keyword':keyword});
     };
 });

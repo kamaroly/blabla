@@ -20,12 +20,18 @@ tigoApp.controller('ServicesCtrl', function($scope,$state,$ionicFilterBar,$ionic
   
      var filterBarInstance;
      
-     $scope.updateServices = function() {
+    $scope.updateServices = function() {
       ServiceRepository.all().then(function(services){
          $scope.services = services;
-         console.log(services);
       });
     };
+
+    $scope.searchServices = function(keyword){
+    	$scope.windowTitle = keyword;
+    	ServiceRepository.search(keyword,{'keyword':keyword}).then(function(services,keyword) {
+    	 $scope.services = services;
+    	});
+    }
 
     $scope.showFilterBar = function () {
         // First refresh data
@@ -39,16 +45,12 @@ tigoApp.controller('ServicesCtrl', function($scope,$state,$ionicFilterBar,$ionic
       });
     };
 
-    $scope.refreshItems = function () {
-      
+    $scope.refreshItems = function () {      
       $scope.updateServices();
-
       if (filterBarInstance) {
-
         filterBarInstance();
         filterBarInstance = null;
       }
-
       $timeout(function () {
         $scope.updateServices();
         $scope.$broadcast('scroll.refreshComplete');
@@ -60,7 +62,6 @@ tigoApp.controller('ServicesCtrl', function($scope,$state,$ionicFilterBar,$ionic
    */
    console.log('You are in the services controller');
    var  keyword = $stateParams.keyword;
-  
    if (keyword == "") {
      $scope.windowTitle = "Services";
       // Refresh services
@@ -70,7 +71,6 @@ tigoApp.controller('ServicesCtrl', function($scope,$state,$ionicFilterBar,$ionic
      // Search service per category
      var getServicePerCategory = function(categoryId){  
       ServiceRepository.getByCategory(categoryId).then(function(services){
-        console.log(services);
        $scope.services = services;
       });
      };
@@ -91,7 +91,7 @@ tigoApp.controller('ServicesCtrl', function($scope,$state,$ionicFilterBar,$ionic
        getServicePerCategory(keyword);
     }
     else if(keyword && keyword.length){
-        
+        $scope.searchServices(keyword);
     }
 
  // Define what happens when someone wants to see more details of the service
