@@ -10,6 +10,7 @@
           <h2>{{ service.name }}</h2>
           <p> {{service.description}}</p>
         </a>
+        <div  class="item" ng-show="!services.length">We couldn't find results related to {{windowTitle}}</div>
 </div>
 </ion-content>
 </ion-view>

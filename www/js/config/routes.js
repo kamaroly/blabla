@@ -18,20 +18,21 @@ $ionicConfigProvider.tabs.position('bottom');
         }
       }
     })
-    .state('tabs.categories', {
-      url: "/categories",
+    .state('tabs.popular', {
+      url: "/popular",
       views: {
-        'categories-tab': {
-          templateUrl: "templates/categories.html",
-          controller : 'categoryCtrl'
+        'popular-tab': {
+          templateUrl: "templates/popular.html",
+          controller : 'popularCtrl'
         }
       }
     })
-    .state('tabs.navstack', {
-      url: "/navstack",
+    .state('tabs.settings', {
+      url: "/settings",
       views: {
-        'about-tab': {
-          templateUrl: "templates/nav-stack.html"
+        'setting-tab': {
+          templateUrl: "templates/settings.html",
+          controller :  "settingCtrl"
         }
       }
     })

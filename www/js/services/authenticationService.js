@@ -30,7 +30,6 @@ tigoApp.service('AuthService', function ($q,$http,$state,$ionicPopup,helperServi
     isAuthenitcated = false;
 
     $http.defaults.headers.common['X-Auth-token'] = undefined;
-
     window.localStorage.removeItem(LOCAL_TOKEN_KEY);
   };
 
@@ -41,8 +40,7 @@ tigoApp.service('AuthService', function ($q,$http,$state,$ionicPopup,helperServi
 
   var login = function(msisdn){
         // Try to get some token
-        serverAuthentication('250'+msisdn);
-                
+        serverAuthentication('250'+msisdn);             
   };
 
   var serverAuthentication = function(msisdn){

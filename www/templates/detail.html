@@ -1,4 +1,4 @@
-<ion-view title="{{ windowTitle}}">
+<ion-view>
   <ion-content>
    <div class="list card">
 
@@ -13,35 +13,25 @@
      </p>  
   </div>
 
-  <div class="item tabs tabs-secondary tabs-icon-left">
-    <a class="tab-item" ng-click="buyMe()" ng-switch on="serviceDetails.type">
-     <span ng-switch-when="mfs"> 
-      <i class="icon ion-bag" >
-      </i>
-       Purchase
-      </span>
-      <span  ng-switch-when="online">
-      <i class="icon ion-earth">
-      </i>
-      Service links
-      </span>
-    <span ng-switch-when="airtime"> 
-       <i class="icon ion-iphone">
-      </i>
-      Buy
-</span>
-    </a>
-    <a class="tab-item" ng-click="contact()">
-      <i class="icon ion-ios-email"></i>
-      Contact us
-    </a>
-    <a class="tab-item" href="#">
-      <i class="icon ion-android-star"></i>
-      Favorite
-    </a>
+ <button class="item button button-block button-positive" href="#" ng-click="buyMe()" ng-switch on="serviceDetails.type">
+        <div class="" ng-switch-when="mfs">
+         <i class="icon ion-bag" ></i>
+         Buy with Tigo cash
+        </div>
+        <div ng-switch-when="online">
+         <i class="icon ion-earth" ></i>
+          View Online services
+        </div>
+        <div ng-switch-when="airtime">
+         <i class="icon ion-eaiphonerth" ></i>
+          Buy this pack
+        </div>
+    </button>
+    <button class="button button-block button-balanced" ng-click="contact()">
+         <i class="icon ion-ios-email" ></i>
+           Contact us
+    </button>
   </div>
   </div>
-
-  
   </ion-content>
 </ion-view>

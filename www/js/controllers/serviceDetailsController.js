@@ -20,7 +20,7 @@ tigoApp.controller('DetailCtrl', function($scope, $ionicScrollDelegate, $ionicHi
   $scope.getServiceDetails = function(serviceId){
      ServiceRepository.get(serviceId).then(function(service){
         $scope.serviceDetails = service;
-
+       $scope.windowTitle = service.name;
         //Get service details
         ServiceLinksRepository.getByService(service.id)
             .then(function(links){
@@ -32,8 +32,6 @@ tigoApp.controller('DetailCtrl', function($scope, $ionicScrollDelegate, $ionicHi
             .then(function(relatedServices){
               $scope.relatedServices = relatedServices;
             });
-        
-        $scope.windowTitle = service.name;
       });
   };
   

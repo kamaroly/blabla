@@ -6,6 +6,7 @@ var databaseName = "imbehe.db";
 var createServicesTable = "CREATE TABLE IF NOT EXISTS services(id integer primary key,name varchar(50),logo varchar(255),description text,slug varchar(150),category_id integer,type varchar(50));";
 var createServiceLinksTable = "CREATE TABLE IF NOT EXISTS service_links(id integer primary key,name varchar(50),value text,service_id integer);";
 var createCategoriesTable = "CREATE TABLE IF NOT EXISTS categories(id integer primary key, name varchar(50),logo varchar(255),description text,slug varchar(150));";
+var createSettingsTable = "CREATE TABLE IF NOT EXISTS settings(key varchar(50), value text);";
 var categoriesCount;
 var servicesCount;
 
@@ -14,7 +15,7 @@ var CategoriesSeeding= [
     {
       "id"   : "1",
       "name": "Mobile Finance services",
-      "logo": "http://virtaxchange.virtacoinmall.com/Tigo.gif",
+      "logo": "img/tigo.png",
       "description": "This is a sample of the product that is going to use Tigo cash as payment method",
       "slug": "mobile_finance_system",
       "reknown": "Royal Academy of Painting and Sculpture"
