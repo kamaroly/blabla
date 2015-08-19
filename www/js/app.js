@@ -23,7 +23,7 @@ tigoApp.run(function($ionicPlatform,$rootScope,$ionicSideMenuDelegate,$cordovaSQ
       // Ionic serve syntax
       db = window.openDatabase(databaseName, "1.0", "tigoApp", -1);
     }
-    $cordovaSQLite.execute(db, createServicesTable);  
+    $cordovaSQLite.execute(db,createServicesTable);  
     $cordovaSQLite.execute(db,createServiceLinksTable);  
     $cordovaSQLite.execute(db,createCategoriesTable);
     $cordovaSQLite.execute(db,createSettingsTable);

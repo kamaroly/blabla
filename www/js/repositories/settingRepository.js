@@ -10,7 +10,7 @@ tigoApp.factory('SettingRepository', function($cordovaSQLite, DBA) {
 
   self.get = function(key) {
     var parameters = [key];
-        return DBA.query("SELECT key,value FROM  settings WHERE key = (?)", parameters)
+          return DBA.query("SELECT key,value FROM  settings WHERE key = (?)", parameters)
                   .then(function(result) {
                     return DBA.getById(result);
                   });
@@ -32,7 +32,7 @@ tigoApp.factory('SettingRepository', function($cordovaSQLite, DBA) {
   }
   self.update = function(key, value) {
     var parameters = [value,key];
-    return DBA.query("UPDATE settings SET value = (?),value = (?) WHERE key = (?)", parameters);
+    return DBA.query("UPDATE settings SET value = (?) WHERE key = (?)", parameters);
   }
   return self;
 })

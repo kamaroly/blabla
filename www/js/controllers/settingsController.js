@@ -1,16 +1,46 @@
-tigoApp.controller('settingCtrl', ['$scope', function ($scope,SettingRepository) {
+tigoApp.controller('settingCtrl', function ($scope,SettingRepository) {
 	// Setting the window title
 	$scope.windowTitle = "Settings";
 	$scope.user    = {'msisdn' : window.localStorage.getItem('msisdn')};
+    $scope.setting = {};
+	$scope.refreshSettings = function(){
+		SettingRepository.all().then(function(settings){
+		settings.forEach(function(setting, index){
+		if(setting.key == 'shop_with_my_number'){
+			$scope.setting.shop_with_my_number  = setting.value;
+		};	
+		if(setting.key == 'enter_is_submit'){
+			$scope.setting.enter_is_submit      =  setting.value;
+			};
+
+		if(setting.key == 'use_airtime_to_buy_packs'){
+			$scope.setting.use_airtime_to_buy_packs      = setting.value;
+			};
+		if(setting.key == 'always_enter_pin'){
+			$scope.setting.always_enter_pin      = setting.value;
+			};
+		});
+	});
+	};
+
+	$scope.refreshSettings();
 
 	$scope.getSetting = function(key){
-		SettingRepository.getById(key).then(function(setting){
-			/**
-			 * @todo  Implement the dynamic settings
-			 */
-			console.log(setting);
-		});
-	}
+		var value;
+		 if(key == 'shop_with_my_number'){
+			value      = $scope.setting.shop_with_my_number;
+		};	
+		if(key == 'enter_is_submit'){
+			value      = $scope.setting.enter_is_submit;
+		};
+		if(key == 'use_airtime_to_buy_packs'){
+			value      = $scope.setting.use_airtime_to_buy_packs;
+		};
+		if(key == 'always_enter_pin'){
+			value      = $scope.setting.use_airtime_to_buy_packs;
+		};
+		SettingRepository.update(key,value);
+	};
 
-	$scope.getSetting();
-}])
+console.log($scope.shop_with_my_number);
+})

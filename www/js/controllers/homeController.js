@@ -8,6 +8,9 @@ tigoApp.controller('HomeTabCtrl', function($scope,$state,ServiceRepository,Servi
       //We need to seed only if we don't have records 
       //in the database
       if (count<1) {
+        SettingSeeding.forEach(function(setting,index){
+          SettingRepository.add(setting);
+        });
        CategoriesSeeding.forEach(function(category,index){
           $scope.createNewCategory(category);
         });
@@ -17,12 +20,11 @@ tigoApp.controller('HomeTabCtrl', function($scope,$state,ServiceRepository,Servi
          serviceLink.service_id = Math.floor(Math.random()*9)+1;
          ServiceLinksRepository.add(serviceLink);
          });             
+
          $scope.createNewService(service);
+     
       });
-            SettingSeeding.forEach(function(setting,index){
-        console.log(setting);
-        SettingRepository.add(setting);
-      });
+ 
       };
     });
   }
