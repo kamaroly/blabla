@@ -1,9 +1,9 @@
 <ion-view view-title="Imbehe">
 <ion-content class="padding padding-top">
     <div class="branding">
-      <img src="img/logo.png"  style="max-width:70px;"/>  
+      <img src="/img/logoDark.png"  style="max-width:70px;"/>  
        <!-- <div class="tagline">Coming soon</div> -->
-      <p>Over 500 services available in one place.</p>
+      <!-- <p>Services at your fingerprint</p> -->
     </div>
 
 <form ng-submit="search(keyword)" class="home_search">
@@ -15,20 +15,27 @@
   </label>
 </div>
 </form>
- <div class="row">
-  <a href="#/tab/services/3" class="col">
-   		<img src="img/tigo.png" />
-  </a>
-  <a  href="#/tab/services/2" class="col">
-      <img src="img/rswitch.png" />
-  </a>
-  </div>
-   <div class="row">
-    <a  href="#/tab/services/2" class="col">
-      <img src="img/public_services.png" />
-  </a>
+<div class="list">
+          <div class="card">
+              <div class="item item-divider center" style="text-align:center">
+                 Most Popular
+              </div>
+              <div class="item item-text-wrap">
+                 <!-- Show images from start -->
+                   <a class="item item-thumbnail-left" href="#">
+      <img src="http://placehold.it/120x120">
+      <h2>Pretty Hate Machine</h2>
+      <p>Nine Inch Nails</p>
+    </a>
 
- <a href="#/tab/services/3" class="col">
-      <img src="img/kaymu.png" />
-  </a>
+              </div>
+              <div class="item item-text-wrap">
+                  <div class="button-bar">
+                    <img src="http://placehold.it/160x160" class="col">
+                   <img src="http://placehold.it/160x160" class="col">
+                  </div>
+              </div>
+          </div>
+
+</div>
  </div>
