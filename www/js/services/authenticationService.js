@@ -44,23 +44,15 @@ tigoApp.service('AuthService', function ($q,$http,$state,$ionicPopup,helperServi
   };
 
   var serverAuthentication = function(msisdn){
-      storeUserCredentials(LOCAL_TOKEN_KEY,msisdn+'balbalsdfljsfasfalsjdfljsatoken');
-      storeUserCredentials('msisdn',msisdn);
-        // Try to send the code
-      $state.go('code-verification');   
-
-      return ;
     // Attempt to auntenticate
     $http.get(SERVER_CONSTANTS.host+SERVER_CONSTANTS.authMsisdnUrl+msisdn)
     .success(function(token){
       // Store the tocken and msisdn
       storeUserCredentials(LOCAL_TOKEN_KEY,token);
       storeUserCredentials('msisdn',msisdn);
-       
+
       // Try to send the code
       $state.go('code-verification');    
-
-
     }).error(function(error){
       console.log(error);
 
@@ -71,20 +63,15 @@ tigoApp.service('AuthService', function ($q,$http,$state,$ionicPopup,helperServi
   // Verify the provided token
   var verifyCode = function(code){
     var msisdn = window.localStorage.getItem('msisdn');
-
-        storeUserCredentials('authenticated',true);
-        $state.go('tabs.home');
-return ;
     $http.get(SERVER_CONSTANTS.host+SERVER_CONSTANTS.authCodeUrl+msisdn+'/'+code)
     .success(function(response){
       // if response == 1 then code is valid
       if(response == '1' ){
         storeUserCredentials('authenticated',true);
         $state.go('tabs.home');
-
         return true;
       }
-        var alertPopup = $ionicPopup.alert({
+      var alertPopup = $ionicPopup.alert({
            title: 'You provided invalid code. Please check your sms and provide valid code',
            // template: 'Please provide your phone number before continue.'
          });
