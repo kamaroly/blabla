@@ -15,6 +15,7 @@ tigoApp.service('AuthService', function ($q,$http,$state,$ionicPopup,helperServi
   var isLoggedIn = function(){
     return window.localStorage.getItem('authenticated')=='true';
   };
+
   //Store our Token in the local store
   function storeUserCredentials(key,value){
 
@@ -71,7 +72,7 @@ tigoApp.service('AuthService', function ($q,$http,$state,$ionicPopup,helperServi
         $state.go('tabs.home');
         return true;
       }
-      var alertPopup = $ionicPopup.alert({
+    var alertPopup = $ionicPopup.alert({
            title: 'You provided invalid code. Please check your sms and provide valid code',
            // template: 'Please provide your phone number before continue.'
          });
