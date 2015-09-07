@@ -9,7 +9,7 @@ tigoApp.constant('USER_ROLES', {
 });
 
 tigoApp.constant('SERVER_CONSTANTS', {
-	host: 'http://imbehe.app',
+	host: 'https://41.138.83.30',
 	authMsisdnUrl : '/api/auth/msisdn/',
 	authCodeUrl : '/api/auth/code/',
 });

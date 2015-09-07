@@ -1,5 +1,5 @@
  // Detail controller
-tigoApp.controller('DetailCtrl', function($scope, $ionicScrollDelegate, $ionicHistory,$stateParams,$ionicModal,helperService,ServiceRepository,ServiceLinksRepository) {
+tigoApp.controller('DetailCtrl', function($scope, $ionicScrollDelegate, $ionicHistory,$stateParams,$ionicPopup,$ionicModal,helperService,ServiceRepository,ServiceLinksRepository) {
   $scope.$on('$ionicView.afterLeave', function(){
     $ionicHistory.clearCache();
   });
@@ -36,7 +36,6 @@ tigoApp.controller('DetailCtrl', function($scope, $ionicScrollDelegate, $ionicHi
   };
   
   $scope.getServiceDetails(serviceId);
-
   $scope.buyMe = function(){
     console.log('You are buying...');
 
@@ -53,6 +52,34 @@ tigoApp.controller('DetailCtrl', function($scope, $ionicScrollDelegate, $ionicHi
     });
   }
 
+  $scope.submitPayment = function() {
+    $scope.modal.hide();
+    $ionicPopup.alert({
+      title:'Success',
+      content: 'Thank you for buying'
+    }).then(function(res){
+      console.log('pushes is fureshi');
+    });
+  };
+
+  //Cleanup the modal when we're done with it!
+  $scope.$on('$destroy', function() {
+    $scope.modal.remove();
+  });
+  // Execute action on hide modal
+  $scope.$on('modal.hidden', function() {
+    // Execute action
+  });
+  // Execute action on remove modal
+  $scope.$on('modal.removed', function() {
+    // Execute action
+  });
+
+
+  $scope.openInBrowser = function(url){
+    window.open(url, '_system', 'location=yes'); 
+    return false;
+  };
   $scope.contact = function(){
 
     $ionicModal.fromTemplateUrl('templates/contact.html', {
