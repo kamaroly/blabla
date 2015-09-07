@@ -9,7 +9,7 @@ tigoApp.constant('USER_ROLES', {
 });
 
 tigoApp.constant('SERVER_CONSTANTS', {
-	host: 'https://41.138.83.30',
+	host: 'http://41.138.83.30/index.php',
 	authMsisdnUrl : '/api/auth/msisdn/',
 	authCodeUrl : '/api/auth/code/',
 });

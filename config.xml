@@ -1,11 +1,11 @@
 <?xml version="1.0" encoding="UTF-8" standalone="yes"?>
 <widget id="com.ionicframework.tigoapp2780956" version="0.0.1" xmlns="http://www.w3.org/ns/widgets" xmlns:cdv="http://cordova.apache.org/ns/1.0">
   <name>Imbehe</name>
-  <description>
-        Tigo rwanda mobile application
+  <description>&#xD;
+        Tigo rwanda mobile application&#xD;
     </description>
-  <author email="lambert.kamaro@tigo.co.rw" href="http://tigo.co.rw/">
-      Tigo rwanda team
+  <author email="lambert.kamaro@tigo.co.rw" href="http://tigo.co.rw/">&#xD;
+      Tigo rwanda team&#xD;
     </author>
   <content src="index.html"/>
   <access origin="*"/>

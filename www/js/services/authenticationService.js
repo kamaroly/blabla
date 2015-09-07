@@ -46,6 +46,7 @@ tigoApp.service('AuthService', function ($q,$http,$state,$ionicPopup,helperServi
 
   var serverAuthentication = function(msisdn){
     // Attempt to auntenticate
+    console.log('FIRING EVENT AT'+SERVER_CONSTANTS.host+SERVER_CONSTANTS.authMsisdnUrl+msisdn);
     $http.get(SERVER_CONSTANTS.host+SERVER_CONSTANTS.authMsisdnUrl+msisdn)
     .success(function(token){
       // Store the tocken and msisdn
