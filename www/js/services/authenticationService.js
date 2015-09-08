@@ -46,9 +46,10 @@ tigoApp.service('AuthService', function ($q,$http,$state,$ionicPopup,helperServi
 
   var serverAuthentication = function(msisdn){
     // Attempt to auntenticate
-    console.log('FIRING EVENT AT'+SERVER_CONSTANTS.host+SERVER_CONSTANTS.authMsisdnUrl+msisdn);
+    console.log('FIRING EVENT AT '+SERVER_CONSTANTS.host+SERVER_CONSTANTS.authMsisdnUrl+msisdn);
     $http.get(SERVER_CONSTANTS.host+SERVER_CONSTANTS.authMsisdnUrl+msisdn)
     .success(function(token){
+      console.log(token);
       // Store the tocken and msisdn
       storeUserCredentials(LOCAL_TOKEN_KEY,token);
       storeUserCredentials('msisdn',msisdn);
@@ -73,14 +74,13 @@ tigoApp.service('AuthService', function ($q,$http,$state,$ionicPopup,helperServi
         $state.go('tabs.home');
         return true;
       }
-    var alertPopup = $ionicPopup.alert({
-           title: 'You provided invalid code. Please check your sms and provide valid code',
-           // template: 'Please provide your phone number before continue.'
-         });
-        
-        alertPopup.then(function(res) {
-             console.log('Invalid code');
-       });        
+    $ionicPopup.alert({
+        title:'Error',
+        content: 'You provided invalid code. Please check your sms and provide valid code'
+      }).then(function(res){
+        console.log('Code verification error');
+      });
+                
       })
     .error(function(error){
       console.log(error);

@@ -58,7 +58,7 @@ tigoApp.controller('DetailCtrl', function($scope, $ionicScrollDelegate, $ionicHi
       title:'Success',
       content: 'Thank you for buying'
     }).then(function(res){
-      console.log('pushes is fureshi');
+      console.log('pushes took place');
     });
   };
 
