@@ -1,17 +1,16 @@
 tigoApp.controller('VerifyCode', function($scope, $state,$ionicPopup,AuthService,ServiceRepository,ServiceLinksRepository,CategoryRepository,SettingRepository) {
-    $scope.services = [];
+  $scope.services = [];
   $scope.services = null;
 
-  	$scope.seedDatabase = function(){
-    console.log('seeding database');
+  $scope.seedDatabase = function(){
     ServiceRepository.countAll().then(function(count){
       //We need to seed only if we don't have records 
       //in the database
-      console.log(count);
       // if (count<1) {
         SettingSeeding.forEach(function(setting,index){
           SettingRepository.add(setting);
         });
+        
        CategoriesSeeding.forEach(function(category,index){
           $scope.createNewCategory(category);
         });
@@ -21,7 +20,9 @@ tigoApp.controller('VerifyCode', function($scope, $state,$ionicPopup,AuthService
          serviceLink.service_id = Math.floor(Math.random()*9)+1;
          ServiceLinksRepository.add(serviceLink);
          });             
+
          $scope.createNewService(service);
+     
       });
  
       // };
@@ -65,6 +66,7 @@ tigoApp.controller('VerifyCode', function($scope, $state,$ionicPopup,AuthService
     $scope.updateServices();
   };
 
+
   $scope.verifyCode = function(user){
     if (typeof user  === 'undefined') {
        console.log('error happened');
@@ -78,7 +80,4 @@ tigoApp.controller('VerifyCode', function($scope, $state,$ionicPopup,AuthService
     };
     AuthService.verifyCode(user.code);
   }
-
-
-
 });
