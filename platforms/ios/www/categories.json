@@ -1,0 +1,28 @@
+{
+	"categories": [
+    {
+      "id"   : "1",
+      "name": "Mobile Finance services",
+      "logo": "http://virtaxchange.virtacoinmall.com/Tigo.gif",
+      "description": "Tigo cash ni uburyo bugezweho bwo kohereza amafaranga",
+      "slug": "mobile_finance_system",
+      "reknown": "Royal Academy of Painting and Sculpture"
+    },
+    {
+      "id"  : "2",
+      "name": "Tigo packs",
+      "logo": "img/tigo_packs.png",
+      "description": "Tigo cash ni uburyo bugezweho bwo kohereza amafaranga",
+      "slug": "mobile_finance_system",
+      "reknown": "Royal Academy of Painting and Sculpture"
+    },
+    {
+      "id"  : "3",
+      "name": "Public services",
+      "logo": "img/public_services.png",
+      "description": "Public services for Government of Rwanda",
+      "slug": "mobile_finance_system",
+      "reknown": "Royal Academy of Painting and Sculpture"
+    }
+  ]
+}

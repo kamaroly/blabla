@@ -1,0 +1,37 @@
+<ion-view>
+  <ion-content>
+   <div class="list card">
+
+  <div class="item item-avatar">
+    <h3>{{serviceDetails.name}}</h3>
+    </div>
+
+  <div class="item item-body">
+    <img class="full-image" src="{{serviceDetails.logo}}">
+    <p>
+      {{serviceDetails.description}} 
+     </p>  
+  </div>
+
+ <button class="item button button-block button-positive" href="#" ng-click="buyMe()" ng-switch on="serviceDetails.type">
+        <div class="" ng-switch-when="mfs">
+         <i class="icon ion-bag" ></i>
+         Buy with Tigo cash
+        </div>
+        <div ng-switch-when="online">
+         <i class="icon ion-earth" ></i>
+          View Online services
+        </div>
+        <div ng-switch-when="airtime">
+         <i class="icon ion-eaiphonerth" ></i>
+          Buy this pack
+        </div>
+    </button>
+    <button class="button button-block button-balanced" ng-click="contact()">
+         <i class="icon ion-ios-email" ></i>
+           Contact us
+    </button>
+  </div>
+  </div>
+  </ion-content>
+</ion-view>

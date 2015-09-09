@@ -1,0 +1,319 @@
+/* Empty. Add your own CSS if you like */
+.pane {
+    background-color: #f5f5f5;
+}
+.star>.item-content {
+  background-color: #EEE8D6 !important;
+}
+
+.splash {
+  background: url(../img/skyline.jpg) no-repeat center center fixed;
+  -webkit-background-size: cover;
+  -moz-background-size: cover;
+  -o-background-size: cover;
+  background-size: cover;
+}
+
+.branding {
+  width: 50%;
+  max-width: 300px;
+  margin: 0 auto;
+  margin-top: 20px;
+  text-align: center;
+}
+
+.tagline {
+  font-size: 1.4rem;
+}
+
+.branding p {
+  margin-top: 10px;
+  font-size: 1rem;
+}
+
+.item-divider {
+  background-color: rgba(0,0,0,.08);
+}
+
+.bar-positive, .tabs-positive>.tabs,.tabs-striped.tabs-positive .tabs {
+  background-color: #2D3E58 !important;
+  border-color:1px solid rgba(0,0,0,.08);
+}
+
+.item-thumbnail-left img {
+  border-radius: 10px;
+}
+
+.item h3 {
+  font-size: 1.2rem;
+  font-weight: bold;
+  color: #2D3E58;
+}
+
+.dayhighlight {
+  background-color: #9EC6DE;
+  border-top: 20px solid #2D3E58;
+}
+
+.dayhighlight h2 {
+  color: #2D3E58;
+  font-size: 2rem;
+  font-weight: 200;
+}
+.home_search{
+  margin-top: 30px;
+  height: 48px;
+}
+
+.bar.item-input-inset .item-input-wrapper input {
+  width: 100%;
+  height: 44%;
+  padding: 10px;
+  color: #2D3E58;
+  font-size: 16px;
+  background: transparent;
+}
+.placeholder-icon {
+  color: #2D3E58;
+  font-size: 18px;
+}
+.placeholder-icon:first-child{
+  padding-left:6px;
+}
+.item-input-wrapper {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -moz-box;
+  display: -moz-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-flex: 1;
+  -webkit-flex: 1 0;
+  -moz-box-flex: 1;
+  -moz-flex: 1 0;
+  -ms-flex: 1 0;
+  flex: 1 0;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  -webkit-align-items: center;
+  -moz-align-items: center;
+  align-items: center;
+  -webkit-border-radius: 4px;
+   border-radius: 0px; 
+   padding-right: 0px; 
+   padding-left: 0px; 
+   background: #fff; 
+}
+.button.button-positive{
+  background-color: #2D3E58 !important;
+}
+.home-search-button{
+background-color: #2D3E58 !important;
+color: #fff;
+font-weight: 400;
+}
+
+/** START OF THE LOGIN PAGE */
+.welcome-register-message{
+  margin-top: 2em;
+  text-align: center;
+  font-size: 1.5em;
+  line-height: 1.8em;
+}
+.loginPage button{
+  margin-top: 10%;
+  background-color: #2D3E58 !important;
+  color: #fff;
+  font-weight: 4000;
+}
+.loginPage button:focus, .loginPage button:hover{
+  color: #eaeaea;
+}
+.loginPage input{
+  border-radius: 25%;
+  font-size: 20px;
+}
+.loginPhone{
+   width: 100%;
+  height: 48px;
+  color: #2D3E58;
+  font-size: 48px;
+  background: transparent;
+}
+
+.list .my-item.item {
+  left: 0;
+  right: 0;
+}
+.left-image{
+  radius : 3%;
+}
+
+/** Styling for the username field **/
+label.item.has-error {  
+  border-bottom: 2px solid red;
+}
+
+/** Styling for the password field when an error exists**/
+label.item.has-error-lr {  
+  border-left: 2px solid red;
+  border-right: 2px solid red;
+
+}
+
+/** Styling for the password field when an error has been resolved**/
+label.item.valid-lr {  
+  border-left: 2px solid green;
+  border-right: 2px solid green;
+  border-bottom: 2px solid green;
+}
+.bar.item-input-inset .item-input-wrapper input {
+    width: 100%;
+}
+
+.search-wrapper-light {
+    border-bottom: 2px solid rgba(255,255,255,0.5);
+    background: none;
+    border-radius: 0;
+    margin-left: 5px;
+    margin-right: 5px;
+}
+
+.search-wrapper-light input, .search-wrapper-light input::-webkit-input-placeholder {
+    color: #ffffff;
+}
+/** Styling for the error text and container **/
+.form-errors {
+  margin: 5px 0
+}
+.form-error {
+  padding: 2px 0 2px 16px;
+  color: red;
+}
+
+.item-thumbnail-left, .item-thumbnail-left .item-content{
+  padding-left: 106px;
+  max-height: 80px;
+  }
+.item-thumbnail-left, .item-thumbnail-left .item-content{
+  min-height: 70px;
+}
+.item-thumbnail-left > img:first-child, .item-thumbnail-left .item-image, .item-thumbnail-left .item-content > img:first-child, .item-thumbnail-left .item-content .item-image{
+   top:0;
+}
+.item-thumbnail-left img {
+   border-radius: 1px; 
+  }
+
+  /* ------- SEARCH ----*/
+.searchBar {
+  color: #fff;
+  margin: 0 !important;
+  padding: 0;
+}
+.searchBar .icon {
+  font-size: 27px;
+  line-height: 1.2;
+  padding-right: 6px;
+  padding-left: 6px;
+}
+.searchBar .searchTxt {
+  border-bottom: 1px solid #fff;
+  left: 55px;
+  z-index: 999;
+  width: calc(100% - 100px);
+  position: fixed;
+  height: calc(100% - 10px);
+}
+.searchBar.numicons2 .searchTxt {
+  width: calc(100% - 135px);
+}
+.searchBar .searchTxt > .bgdiv {
+  background-color: #aaa;
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  opacity: 0.3;
+}
+.searchBar .searchTxt > .bgtxt {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+}
+.searchBar .searchTxt input {
+  background-color: inherit;
+  color: #fff;
+  padding-left: 5px;
+  padding-right:5px;
+}
+
+.col >img {
+  border : 1px solid rgba(0,0,0,0.08);
+  width: 100%;
+  height: 30%;
+}
+
+.item-body .full-image{
+  max-height: 300px;
+}
+
+*::-webkit-input-placeholder {
+  color: red;
+}
+*:-moz-placeholder {
+  color: red;
+}
+*:-ms-input-placeholder { /* IE10+ */
+  color: red;
+}
+
+.transparent {
+  background: transparent !important;
+}
+.image-modal {
+  width: 100% !important;
+  height: 100%;
+  top: 0 !important;
+  left: 0 !important;
+}
+.fullscreen-image {
+  max-width: 100%;
+  max-height: 100%;
+  bottom: 0;
+  left: 0;
+  margin: auto;
+  overflow: auto;
+  position: fixed;
+  right: 0;
+  top: 0;
+}
+.slider {
+  width: 100%;
+  height: 100%;
+}
+
+p.info {
+  position: absolute;
+  bottom: 55px;
+  margin: 0 auto;
+  width: 100%;
+  display: block;
+  text-align: center;
+  font-size: 28px;
+  color: #ffffff;
+}
+
+/* Fix modal backdrop for smaller devices */
+@media (max-width: 679px) {
+  .active .modal-backdrop-bg {
+    opacity: .5;
+  }
+  .modal-backdrop-bg {
+    -webkit-transition: opacity 300ms ease-in-out;
+    transition: opacity 300ms ease-in-out;
+    background-color: #000;
+    opacity: 0;
+  }
+}

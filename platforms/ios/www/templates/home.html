@@ -1,0 +1,41 @@
+<ion-view view-title="Imbehe">
+<ion-content class="padding padding-top">
+    <div class="branding">
+      <img src="img/logoDark.png"  style="max-width:70px;"/>  
+       <!-- <div class="tagline">Coming soon</div> -->
+      <!-- <p>Services at your fingerprint</p> -->
+    </div>
+
+<form ng-submit="search(keyword)" class="home_search">
+  <div class="list list-inset">
+  <label class="item item-input">
+    <i class="icon ion-search placeholder-icon"></i>
+    <input type="text" placeholder="Search" 
+        ng-model = "keyword">
+  </label>
+</div>
+</form>
+<div class="list">
+          <div class="card">
+              <div class="item item-divider center" style="text-align:center">
+                 Most Popular
+              </div>
+              <div class="item item-text-wrap">
+                 <!-- Show images from start -->
+                   <a class="item item-thumbnail-left" href="#">
+      <img src="img/vuga_packs.png">
+      <h2>Vuga packs - on demand</h2>
+      <p>SECONDS:800, SMS:13, DATA : 8Mbs</p>
+    </a>
+
+              </div>
+              <div class="item item-text-wrap">
+                  <div class="button-bar">
+                    <img src="img/Century_cinema.png" class="col">
+                   <img src="img/tigo_cash_logo.png" class="col">
+                  </div>
+              </div>
+          </div>
+
+</div>
+ </div>

@@ -1,0 +1,37 @@
+<ion-view view-title="Welcome to RwandaApp">
+  <ion-content class="loginPage">
+  <div class="padding">
+  <div class="branding">
+    <img src="img/logoDark.png"  style="width:70px;"/>  
+  </div>
+  <p class="welcome-register-message">Provide your phone number to continue</p>
+<form name="signinForm" novalidate="">  
+<div class="list">
+<label class="item item-input"  
+   ng-class="{ 'has-error' : signinForm.msisdn.$invalid}">
+<span class="input-label">Phone number : <font style="font-size:20px;color:#000;">+250</font></span>  
+<input type="tel"  
+   name="msisdn"
+   ng-model="user.msisdn" 
+   ng-minlength="9" 
+   ng-maxlength="9" 
+   event-focus="click"
+   event-focus-id="msisdn"
+   required>
+</label>
+
+      <button class="button button-block" ng-click="login(user)">
+        Continue...
+      </button>
+    </div>
+ </form>
+ </form>   
+
+  </ion-content>
+</ion-view>
+
+<script id="templates/form-errors.html" type="text/ng-template">  
+  <div class="form-error" ng-message="required">This field is required.</div>
+  <div class="form-error" ng-message="minlength">This field is must be at least 5 characters.</div>
+  <div class="form-error" ng-message="maxlength">This field is must be less than 50 characters</div>
+</script> 

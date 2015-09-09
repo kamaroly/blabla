@@ -1,0 +1,16 @@
+<div class="list">
+  <label class="item item-input item-stacked-label">
+    <span class="input-label">Your phone</span>
+    <input type="text" placeholder="{{ user.msisdn }}">
+  </label>
+  <label class="item item-input item-stacked-label">
+    <span class="input-label">Amount to pay</span>
+    <input type="text" placeholder="{{item.amount}} Rwf">
+  </label>
+  <label class="item item-input item-stacked-label">
+    <span class="input-label">TIGO CASH PIN</span>
+    <input type="text" ng-model="user.pin" placeholder="****" autofocus="autofocus">
+  </label>
+</div>
+    <button class="button button-full icon-left ion-bag button-balanced" ng-click="submitPayment(newUser)">Buy</button>
+</div>
