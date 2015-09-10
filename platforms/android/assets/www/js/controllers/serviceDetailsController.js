@@ -1,5 +1,5 @@
  // Detail controller
-tigoApp.controller('DetailCtrl', function($scope, $ionicScrollDelegate, $ionicHistory,$stateParams,$ionicPopup,$ionicModal,helperService,ServiceRepository,ServiceLinksRepository) {
+tigoApp.controller('DetailCtrl', function($scope, $ionicScrollDelegate,$http, $ionicHistory,$stateParams,$ionicPopup,$ionicModal,helperService) {
   $scope.$on('$ionicView.afterLeave', function(){
     $ionicHistory.clearCache();
   });
@@ -16,24 +16,31 @@ tigoApp.controller('DetailCtrl', function($scope, $ionicScrollDelegate, $ionicHi
 
   var serviceId = $stateParams.item;
   
-  // Get service details 
-  $scope.getServiceDetails = function(serviceId){
-     ServiceRepository.get(serviceId).then(function(service){
-        $scope.serviceDetails = service;
-       $scope.windowTitle = service.name;
-        //Get service details
-        ServiceLinksRepository.getByService(service.id)
-            .then(function(links){
-              $scope.serviceLinks = links;
-            });
-        
-        // Get service related services 
-        ServiceRepository.getRelated(service.category_id)
-            .then(function(relatedServices){
-              $scope.relatedServices = relatedServices;
-            });
+  // Get the service we are looking for
+  $scope.getServiceDetails = function(){
+      $http.get('services.json',{'serviceId':serviceId}).success(function(data) {  
+        var results = [];
+         for (var i = data.services.length - 1; i >= 0; i--) {
+           if(data.services[i].id == serviceId){
+            $scope.serviceDetails = data.services[i];
+            $scope.serviceLinks = data.services[i].services; 
+            $scope.windowTitle = 'Details for '+data.services[i].name;
+            return true;            
+           }
+         };
       });
   };
+  $scope.contact = function(){
+
+    $ionicModal.fromTemplateUrl('templates/contact.html', {
+    scope: $scope
+    }).then(function(modal) {
+    $scope.modal = modal;
+     $scope.modal.show();
+    },function(error){
+      console.log(error);
+    });
+  }
   
   $scope.getServiceDetails(serviceId);
   $scope.buyMe = function(){

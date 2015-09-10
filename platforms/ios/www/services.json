@@ -3,7 +3,7 @@
     {
       "id"  : "1",
       "name": "Tigo cash",
-      "logo": "http://virtaxchange.virtacoinmall.com/Tigo.gif",
+      "logo": "img/tigo_cash_logo.png",
       "description": "This is a mobile financing service provided by Tigo rwanda",
       "slug": "mobile_finance_system",
       "category_id" : 1,
@@ -188,7 +188,7 @@
      {
       "id"  : "9",
       "name": "Cyizere",
-      "logo": "img/tigo_packs.png",
+      "logo": "img/vuga_packs.png",
       "description": "On demand vuga pack",
       "slug": "cyizere",
       "category_id" : 1,

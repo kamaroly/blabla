@@ -1,7 +1,7 @@
-tigoApp.factory('AuthInterceptor', function ($rootScope,$q,AUTH_EVENTS) {
+tigoApp.factory('AuthInterceptor',['$rootScope','$q','AUTH_EVENTS',function ($rootScope,$q,AUTH_EVENTS) {
   return {
     responseError : function(response){
-       $rootScope.broadcast({
+       $rootScope.$broadcast({
        401: AUTH_EVENTS.notAuthenticated,
        403: AUTH_EVENTS.notAuthorized,
      }[response.status],response);
@@ -9,4 +9,4 @@ tigoApp.factory('AuthInterceptor', function ($rootScope,$q,AUTH_EVENTS) {
        return $q.reject(response);
     }
   };
-});
+}]);

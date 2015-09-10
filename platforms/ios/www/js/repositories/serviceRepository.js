@@ -47,6 +47,7 @@ tigoApp.factory('ServiceRepository', function($cordovaSQLite, DBA) {
               });
   }
   self.add = function(service) {
+    console.log(service.name);
     var parameters = [service.id, service.name,service.logo,service.description,service.slug,service.category_id,service.type];
     return DBA.query("INSERT INTO services (id,name,logo,description,slug,category_id ,type) VALUES (?,?,?,?,?,?,?)", parameters);
   }

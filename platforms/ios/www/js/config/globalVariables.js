@@ -2,7 +2,7 @@
  * Global variables
  */
 var db = null;
-var databaseName = "imbehe.db";
+var databaseName = { name: "imbeheApp.db" }; //"imbehe.db";
 var createServicesTable = "CREATE TABLE IF NOT EXISTS services(id integer primary key,name varchar(50),logo varchar(255),description text,slug varchar(150),category_id integer,type varchar(50));";
 var createServiceLinksTable = "CREATE TABLE IF NOT EXISTS service_links(id integer primary key,name varchar(50),value text,service_id integer);";
 var createCategoriesTable = "CREATE TABLE IF NOT EXISTS categories(id integer primary key, name varchar(50),logo varchar(255),description text,slug varchar(150));";

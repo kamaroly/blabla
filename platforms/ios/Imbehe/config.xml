@@ -42,13 +42,13 @@
     <splash height="960" src="resources/ios/splash/Default@2x~iphone.png" width="640" />
     <splash height="480" src="resources/ios/splash/Default~iphone.png" width="320" />
     <name>Imbehe</name>
-    <description>
-        Tigo rwanda mobile application
+    <description>
+        Tigo rwanda mobile application
     </description>
-    <author email="lambert.kamaro@tigo.co.rw" href="http://tigo.co.rw/">
-      Tigo rwanda team
+    <author email="lambert.kamaro@tigo.co.rw" href="http://tigo.co.rw/">
+      Tigo rwanda team
     </author>
-    <content original-src="index.html" src="http://10.30.0.227:8100" />
+    <content src="index.html" />
     <access origin="*" />
     <access launch-external="yes" origin="tel:*" />
     <access launch-external="yes" origin="mailto:*" />
