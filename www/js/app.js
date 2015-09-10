@@ -28,7 +28,7 @@ tigoApp.run(function($ionicPlatform,$rootScope,$ionicSideMenuDelegate,$cordovaSQ
     // $cordovaSQLite.execute(db,createServiceLinksTable);  
     // $cordovaSQLite.execute(db,createCategoriesTable);
     // $cordovaSQLite.execute(db,createSettingsTable);
-    // });
+     });
 
  });
 
