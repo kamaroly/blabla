@@ -47,20 +47,21 @@ tigoApp.service('AuthService', function ($q,$http,$state,$ionicPopup,helperServi
   var serverAuthentication = function(msisdn){
     // Attempt to auntenticate
     console.log('FIRING EVENT AT '+SERVER_CONSTANTS.host+SERVER_CONSTANTS.authMsisdnUrl+msisdn);
+
+     // Attempt to auntenticate
     $http.get(SERVER_CONSTANTS.host+SERVER_CONSTANTS.authMsisdnUrl+msisdn)
     .success(function(token){
-      console.log(token);
       // Store the tocken and msisdn
       storeUserCredentials(LOCAL_TOKEN_KEY,token);
       storeUserCredentials('msisdn',msisdn);
-
+       
       // Try to send the code
       $state.go('code-verification');    
+
+
     }).error(function(error){
       console.log(error);
-
     });
-       return false;
   };
 
   // Verify the provided token
@@ -98,18 +99,18 @@ tigoApp.service('AuthService', function ($q,$http,$state,$ionicPopup,helperServi
   }
 });
 
-tigoApp.factory('AuthInterceptor', function ($rootScope,$q,AUTH_EVENTS) {
-  return {
-    responseError : function(response){
-       $rootScope.broadcast({
-       401: AUTH_EVENTS.notAuthenticated,
-       403: AUTH_EVENTS.notAuthorized,
-     }[response.status],response);
+// tigoApp.factory('AuthInterceptor', function ($rootScope,$q,AUTH_EVENTS) {
+//   return {
+//     responseError : function(response){
+//        $rootScope.broadcast({
+//        401: AUTH_EVENTS.notAuthenticated,
+//        403: AUTH_EVENTS.notAuthorized,
+//      }[response.status],response);
 
-       return $q.reject(response);
-    }
-  };
-});
+//        return $q.reject(response);
+//     }
+//   };
+// });
 
 tigoApp.config(function($httpProvider){
   $httpProvider.interceptors.push('AuthInterceptor');

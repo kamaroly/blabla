@@ -48,7 +48,7 @@
     <author email="lambert.kamaro@tigo.co.rw" href="http://tigo.co.rw/">
       Tigo rwanda team
     </author>
-    <content src="index.html" />
+    <content original-src="index.html" src="http://192.168.0.2:8100" />
     <access origin="*" />
     <access launch-external="yes" origin="tel:*" />
     <access launch-external="yes" origin="mailto:*" />
