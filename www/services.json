@@ -2,13 +2,14 @@
 "services": [
     {
       "id"  : "1",
-      "name": "Tigo cash",
-      "logo": "img/tigo_cash_logo.png",
-      "description": "This is a mobile financing service provided by Tigo rwanda",
-      "slug": "mobile_finance_system",
+      "name": "Safe moto",
+      "logo": "img/safemoto.png",
+      "description": "Making Motorcycle Taxis Safer.For moto customers, our Uber influenced smartphone app empowers them to choose a safer moto taxi driver For moto taxi drivers, our app creates the financial incentive for them to drive safer",
+      "slug": "safe_moto",
       "category_id" : 1,
       "type":"mfs",
-      "reknown": "Royal Academy of Painting and Sculpture"
+      "price": 100,
+      "company_msisdn" :"250721155555"
     },
     {
       "id"  : "2",
@@ -192,6 +193,7 @@
       "description": "On demand vuga pack",
       "slug": "cyizere",
       "category_id" : 1,
+      "product_id":"1",
       "type":"airtime",
       "services":[
       {

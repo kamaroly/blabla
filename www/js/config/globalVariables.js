@@ -32,7 +32,7 @@ var CategoriesSeeding= [
     {
       "id"   : "1",
       "name": "Mobile Finance services",
-      "logo": "img/tigo.png",
+      "logo": "img/tigo_cash_logo.png",
       "description": "This is a sample of the product that is going to use Tigo cash as payment method",
       "slug": "mobile_finance_system",
       "reknown": "Royal Academy of Painting and Sculpture"
