@@ -1,7 +1,9 @@
 <div class="padding has-header">
 <ul class="list" >
     <li class="item" ng-repeat="service in serviceLinks">
-       <a  href="#" ng-click="openInBrowser(service.value)">{{service.name}}</a>
+      <a ng-click="openInBrowser(service.url)">
+           {{service.name}}
+       </a>
     </li>
 </ul>
 </div>

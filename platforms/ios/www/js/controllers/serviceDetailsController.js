@@ -127,8 +127,8 @@ tigoApp.controller('DetailCtrl', function($scope, $ionicScrollDelegate,$http,$io
 
 
   $scope.openInBrowser = function(url){
+    console.log(url);
     window.open(url, '_system', 'location=yes'); 
-    return false;
   };
 
 });
