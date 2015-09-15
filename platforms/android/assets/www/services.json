@@ -12,90 +12,6 @@
       "company_msisdn" :"250721155555"
     },
     {
-      "id"  : "2",
-      "name": "Social Security",
-      "logo": "img/social_security.png",
-      "description": "The Government established the Rwanda Social Security Board (RSSB) after the merger of Social Security Fund of Rwanda (SSFR) with Rwanda Health Insurance Fund (RAMA).",
-      "slug": "social_security",
-      "category_id" : 3,
-      "type":"online",
-      "services":[
-      {
-        "name":"Non Fiscal (Amafaranga atari Imisoro) ",
-        "url":"https://nonfiscal.rra.gov.rw/"
-      },
-      {
-        "name":"e-Tax/RSSB (Caisse Sociale & Rama)",
-        "url":"e-Tax/RSSB (Caisse Sociale & Rama) "
-      },
-      {
-        "name":"E-Tax Guides",
-        "url":"http://www.rra.gov.rw/?page=etaxguide "
-      },
-      {
-        "name":"Electronic Single Window",
-        "url":"https://sw.gov.rw/"
-      }],
-
-      "tags": ""
-    },
-     {
-      "id"  : "3",
-      "name": "Police",
-      "logo": "img/police.png",
-      "description": "Please contact us at our General Headquarters with the details below. Please use the emergency phone numbers above for emergency purposes. Use the form below to contact us directly.",
-      "slug": "police",
-      "category_id" : 3,
-      "type":"online",
-      "services":[
-      {
-        "name":"Non Fiscal (Amafaranga atari Imisoro) ",
-        "url":"https://nonfiscal.rra.gov.rw/"
-      },
-      {
-        "name":"e-Tax/RSSB (Caisse Sociale & Rama)",
-        "url":"e-Tax/RSSB (Caisse Sociale & Rama) "
-      },
-      {
-        "name":"E-Tax Guides",
-        "url":"http://www.rra.gov.rw/?page=etaxguide "
-      },
-      {
-        "name":"Electronic Single Window",
-        "url":"https://sw.gov.rw/"
-      }],
-
-      "tags": ""
-    },
-    {
-      "id"  : "4",
-      "name": "National ID",
-      "logo": "img/public_services.png",
-      "description": "Rwanda’s National ID Project ",
-      "slug": "national_id",
-      "category_id" : 3,
-      "type":"online",
-           "services":[
-      {
-        "name":"Non Fiscal (Amafaranga atari Imisoro) ",
-        "url":"https://nonfiscal.rra.gov.rw/"
-      },
-      {
-        "name":"e-Tax/RSSB (Caisse Sociale & Rama)",
-        "url":"e-Tax/RSSB (Caisse Sociale & Rama) "
-      },
-      {
-        "name":"E-Tax Guides",
-        "url":"http://www.rra.gov.rw/?page=etaxguide "
-      },
-      {
-        "name":"Electronic Single Window",
-        "url":"https://sw.gov.rw/"
-      }],
-
-      "tags": ""
-    },
-    {
       "id"  : "5",
       "name": "Rwanda Revenue Authoriry",
       "logo": "img/rra.png",
@@ -132,65 +48,36 @@
       "type":"online",
            "services":[
       {
-        "name":"Non Fiscal (Amafaranga atari Imisoro) ",
-        "url":"https://nonfiscal.rra.gov.rw/"
+        "name":"Online Business Registration System",
+        "url":"http://org.rdb.rw/busregonline/Public/SignUp.aspx?h=cb6ebc8f-2b6a-40ee-be05-eb3e5edbadb3"
       },
       {
-        "name":"e-Tax/RSSB (Caisse Sociale & Rama)",
-        "url":"e-Tax/RSSB (Caisse Sociale & Rama) "
-      },
-      {
-        "name":"E-Tax Guides",
-        "url":"http://www.rra.gov.rw/?page=etaxguide "
-      },
-      {
-        "name":"Electronic Single Window",
-        "url":"https://sw.gov.rw/"
-      }],
-      "tags": ""
-    },
-    {
-      "id"  : "7",
-      "name": "Safe motos",
-      "logo": "img/safemoto.png",
-      "description": "SafeMotos using Rwanda as “test kitchen” for Africa-wide rollout",
-      "slug": "rwanda_development_board",
-      "category_id" : 4,
-      "type":"online",
+        "name":"Mortgage Registration",
+        "url":"http://org.rdb.rw/real/auth/Public/LogOn.aspx?ReturnUrl=%2freal%2fadm%2fdefault.aspx"
+      }
+      ],
       "tags": ""
     },{
       "id"  : "8",
       "name": "Huguka.com",
       "logo": "img/huguka.png",
-      "description": "Amasomo asobanutse y'ikoranabuhanga, atunganywa buri munsi.",
+      "description": "Amasomo asobanutse y'ikoranabuhanga, atunganywa buri munsi.Kugeza ubu, Huguka.com ni rwo rubuga rufite amasomo y'umwimerere ari mu rurimi rw'ikinyarwanda kandi ajyanye n'igihe.",
       "slug": "Huguka",
       "category_id" : 4,
       "type":"online",
            "services":[
       {
-        "name":"Non Fiscal (Amafaranga atari Imisoro) ",
-        "url":"https://nonfiscal.rra.gov.rw/"
-      },
-      {
-        "name":"e-Tax/RSSB (Caisse Sociale & Rama)",
-        "url":"e-Tax/RSSB (Caisse Sociale & Rama) "
-      },
-      {
-        "name":"E-Tax Guides",
-        "url":"http://www.rra.gov.rw/?page=etaxguide "
-      },
-      {
-        "name":"Electronic Single Window",
-        "url":"https://sw.gov.rw/"
+        "name":"Iyandikishe",
+        "url":"https://www.huguka.com/ifatabuguzi"
       }],
 
       "tags": ""
     }  , 
      {
       "id"  : "9",
-      "name": "Cyizere",
+      "name": "Cyizere 100",
       "logo": "img/vuga_packs.png",
-      "description": "On demand vuga pack",
+      "description": "Cyizere 100 will give you 800 seconds and 13 SMS to use Tigo to Tigo valid for 24 hours",
       "slug": "cyizere",
       "category_id" : 1,
       "product_id":"1",

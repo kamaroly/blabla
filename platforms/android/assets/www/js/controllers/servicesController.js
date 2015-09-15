@@ -43,7 +43,6 @@ tigoApp.controller('ServicesCtrl', function($scope,$http,$state,$ionicFilterBar,
       
       getItems();
       if (filterBarInstance) {
-
         filterBarInstance();
         filterBarInstance = null;
       }
@@ -60,8 +59,6 @@ tigoApp.controller('ServicesCtrl', function($scope,$http,$state,$ionicFilterBar,
    console.log('You are in the search controller');
    var  keyword = $stateParams.keyword;
    
-   $scope.windowTitle = keyword;
-
    if (keyword == "") {
      $scope.windowTitle = "Services";
    };
@@ -102,7 +99,7 @@ tigoApp.controller('ServicesCtrl', function($scope,$http,$state,$ionicFilterBar,
       $scope.services = getServicePerCategory(keyword);
     }
     else if(keyword && keyword.length){
-        
+         $scope.windowTitle = keyword;
     }
 
  // Define what happens when someone wants to see more details of the service
