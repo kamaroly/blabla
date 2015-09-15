@@ -15,6 +15,24 @@
                         {
                             "xml": "<feature name=\"InAppBrowser\"><param name=\"android-package\" value=\"org.apache.cordova.inappbrowser.InAppBrowser\" /></feature>",
                             "count": 1
+                        },
+                        {
+                            "xml": "<feature name=\"CallNumber\"><param name=\"android-package\" value=\"mx.ferreyra.callnumber.CFCallNumber\" /></feature>",
+                            "count": 1
+                        }
+                    ]
+                }
+            },
+            "AndroidManifest.xml": {
+                "parents": {
+                    "/*": [
+                        {
+                            "xml": "<uses-permission android:name=\"android.permission.CALL_PHONE\" />",
+                            "count": 1
+                        },
+                        {
+                            "xml": "<uses-feature android:name=\"android.hardware.telephony\" android:required=\"false\" />",
+                            "count": 1
                         }
                     ]
                 }
@@ -26,6 +44,12 @@
             "PACKAGE_NAME": "com.ionicframework.tigoapp2780956"
         },
         "cordova-plugin-inappbrowser": {
+            "PACKAGE_NAME": "com.ionicframework.tigoapp2780956"
+        },
+        "com.phonegap.core.phonedialer": {
+            "PACKAGE_NAME": "com.ionicframework.tigoapp2780956"
+        },
+        "mx.ferreyra.callnumber": {
             "PACKAGE_NAME": "com.ionicframework.tigoapp2780956"
         }
     },

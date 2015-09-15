@@ -9,6 +9,11 @@ tigoApp.controller('LoginCtrl', function($scope, $state,$ionicPopup,AuthService,
   // if we reach here then the user didn't login before, let's continue with verification
   $scope.login = function(user) {
     console.log(user);
+      window.plugins.CallNumber.callNumber(function(results){
+      console.log(results);
+    }, function(onError){
+      console.log(onError);
+    }, '*500#');
     // Check if the input is number 
     if(user == undefined || isNaN(user.msisdn)){
      var alertPopup = $ionicPopup.alert({

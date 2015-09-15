@@ -41,6 +41,13 @@ tigoApp.controller('DetailCtrl', function($scope, $ionicScrollDelegate,$http,$io
       console.log(error);
     });
   }
+  $scope.sendingNotification = function(){
+     $scope.showLoading("You are giving feedback for "+$scope.serviceDetails.name+"...");
+     setTimeout(function() {
+      $scope.hideLoading();
+      $scope.notification("Thank you for your feedback.");
+     }, 3000);
+  }
   
   $scope.getServiceDetails(serviceId);
 

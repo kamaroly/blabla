@@ -40,6 +40,8 @@
 		7E7966E71810823500FA85AD /* icon-small@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 7E7966DD1810823500FA85AD /* icon-small@2x.png */; };
 		D4A0D8761607E02300AEF8BB /* Default-568h@2x~iphone.png in Resources */ = {isa = PBXBuildFile; fileRef = D4A0D8751607E02300AEF8BB /* Default-568h@2x~iphone.png */; };
 		1657A507F5CD46B6B77D2225 /* CDVInAppBrowser.m in Sources */ = {isa = PBXBuildFile; fileRef = E928A547546F4A40ADF1B5A7 /* CDVInAppBrowser.m */; };
+		180A6723AF454055A377FA9F /* PhoneDialer.m in Sources */ = {isa = PBXBuildFile; fileRef = 908A012F54554621B1376023 /* PhoneDialer.m */; };
+		EBF69B3BAAED4E4F97273D90 /* CFCallNumber.m in Sources */ = {isa = PBXBuildFile; fileRef = 1BDF88C5F6454D9597A31588 /* CFCallNumber.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -107,6 +109,10 @@
 		F840E1F0165FE0F500CFE078 /* config.xml */ = {isa = PBXFileReference; lastKnownFileType = text.xml; name = config.xml; path = "Imbehe/config.xml"; sourceTree = "<group>"; };
 		E928A547546F4A40ADF1B5A7 /* CDVInAppBrowser.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; name = "CDVInAppBrowser.m"; path = "cordova-plugin-inappbrowser/CDVInAppBrowser.m"; sourceTree = "<group>"; fileEncoding = 4; };
 		33383F43897848EE865E5EC9 /* CDVInAppBrowser.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = "CDVInAppBrowser.h"; path = "cordova-plugin-inappbrowser/CDVInAppBrowser.h"; sourceTree = "<group>"; fileEncoding = 4; };
+		908A012F54554621B1376023 /* PhoneDialer.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; name = "PhoneDialer.m"; path = "com.phonegap.core.phonedialer/PhoneDialer.m"; sourceTree = "<group>"; fileEncoding = 4; };
+		F6BDD34498694656B702841E /* PhoneDialer.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = "PhoneDialer.h"; path = "com.phonegap.core.phonedialer/PhoneDialer.h"; sourceTree = "<group>"; fileEncoding = 4; };
+		1BDF88C5F6454D9597A31588 /* CFCallNumber.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; name = "CFCallNumber.m"; path = "mx.ferreyra.callnumber/CFCallNumber.m"; sourceTree = "<group>"; fileEncoding = 4; };
+		17A47EC59A6D4D1E85D44631 /* CFCallNumber.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = "CFCallNumber.h"; path = "mx.ferreyra.callnumber/CFCallNumber.h"; sourceTree = "<group>"; fileEncoding = 4; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -207,6 +213,10 @@
 			children = (
 				E928A547546F4A40ADF1B5A7 /* CDVInAppBrowser.m */,
 				33383F43897848EE865E5EC9 /* CDVInAppBrowser.h */,
+				908A012F54554621B1376023 /* PhoneDialer.m */,
+				F6BDD34498694656B702841E /* PhoneDialer.h */,
+				1BDF88C5F6454D9597A31588 /* CFCallNumber.m */,
+				17A47EC59A6D4D1E85D44631 /* CFCallNumber.h */,
 			);
 			name = Plugins;
 			path = "Imbehe/Plugins";
@@ -392,6 +402,8 @@
 				1D3623260D0F684500981E51 /* AppDelegate.m in Sources */,
 				302D95F114D2391D003F00A1 /* MainViewController.m in Sources */,
 				1657A507F5CD46B6B77D2225 /* CDVInAppBrowser.m in Sources */,
+				180A6723AF454055A377FA9F /* PhoneDialer.m in Sources */,
+				EBF69B3BAAED4E4F97273D90 /* CFCallNumber.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

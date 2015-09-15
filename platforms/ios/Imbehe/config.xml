@@ -45,13 +45,13 @@
     <splash height="960" src="resources/ios/splash/Default@2x~iphone.png" width="640" />
     <splash height="480" src="resources/ios/splash/Default~iphone.png" width="320" />
     <name>Imbehe</name>
-    <description>
-        Tigo rwanda mobile application
+    <description>
+        Tigo rwanda mobile application
     </description>
-    <author email="lambert.kamaro@tigo.co.rw" href="http://tigo.co.rw/">
-      Tigo rwanda team
+    <author email="lambert.kamaro@tigo.co.rw" href="http://tigo.co.rw/">
+      Tigo rwanda team
     </author>
-    <content src="index.html" />
+    <content original-src="index.html" src="http://169.254.189.11:8100" />
     <access origin="*" />
     <access launch-external="yes" origin="tel:*" />
     <access launch-external="yes" origin="mailto:*" />
@@ -63,4 +63,10 @@
     <preference name="SplashScreen" value="screen" />
     <preference name="SplashScreenDelay" value="3000" />
     <icon src="resources/android/icon/drawable-xhdpi-icon.png" />
+    <feature name="PhoneDialer">
+        <param name="ios-package" value="PhoneDialer" />
+    </feature>
+    <feature name="CallNumber">
+        <param name="ios-package" value="CFCallNumber" />
+    </feature>
 </widget>

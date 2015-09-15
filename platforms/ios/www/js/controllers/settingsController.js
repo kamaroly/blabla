@@ -4,23 +4,11 @@ tigoApp.controller('settingCtrl', function ($scope,SettingRepository) {
 	$scope.user    = {'msisdn' : window.localStorage.getItem('msisdn')};
     $scope.setting = {};
 	$scope.refreshSettings = function(){
-		SettingRepository.all().then(function(settings){
-		settings.forEach(function(setting, index){
-		if(setting.key == 'shop_with_my_number'){
-			$scope.setting.shop_with_my_number  = setting.value;
-		};	
-		if(setting.key == 'enter_is_submit'){
-			$scope.setting.enter_is_submit      =  setting.value;
-			};
-
-		if(setting.key == 'use_airtime_to_buy_packs'){
-			$scope.setting.use_airtime_to_buy_packs      = setting.value;
-			};
-		if(setting.key == 'always_enter_pin'){
-			$scope.setting.always_enter_pin      = setting.value;
-			};
-		});
-	});
+	window.localStorage.setItem('shop_with_my_number',$scope.setting.shop_with_my_number);
+	window.localStorage.setItem('enter_is_submit',$scope.setting.enter_is_submit);	
+	window.localStorage.setItem('use_airtime_to_buy_packs',$scope.setting.use_airtime_to_buy_packs);
+	window.localStorage.setItem('always_enter_pin',$scope.setting.always_enter_pin);		
+	
 	};
 
 	$scope.refreshSettings();
@@ -39,8 +27,7 @@ tigoApp.controller('settingCtrl', function ($scope,SettingRepository) {
 		if(key == 'always_enter_pin'){
 			value      = $scope.setting.use_airtime_to_buy_packs;
 		};
-		SettingRepository.update(key,value);
-	};
 
-console.log($scope.shop_with_my_number);
+		window.localStorage.setItem(key,value);	
+	};
 })
